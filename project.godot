@@ -27,3 +27,7 @@ folder_colors={
 "res://textures/": "orange",
 "res://themes/": "green"
 }
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
