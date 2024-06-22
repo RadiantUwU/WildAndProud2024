@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="teagame :3"
-run/main_scene="res://nodes/menu.tscn"
+run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,7 +24,7 @@ buses/default_bus_layout="res://new_audio_bus_layout.tres"
 PalleteSystem="*res://autoload/apply_palette.tscn"
 Save_Loader="*res://scripts/savefile/save_loader.gd"
 GameStateHolder="*res://scripts/savefile/game_state_holder.gd"
-DialogueBox="*res://nodes/dialogue_box.tscn"
+DialogueBox="*res://scenes/dialogue_box.tscn"
 
 [display]
 
@@ -38,6 +38,7 @@ folder_colors={
 "res://autoload/": "red",
 "res://materials/": "orange",
 "res://meshes/": "orange",
+"res://resources/": "green",
 "res://scenes/": "purple",
 "res://scripts/": "blue",
 "res://sfx/": "yellow",
