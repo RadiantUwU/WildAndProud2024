@@ -10,13 +10,18 @@ config_version=5
 
 [application]
 
-config/name="WildAndProud2024"
+config/name="teagame :3"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PalleteSystem="*res://autoload/apply_palette.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [file_customization]
 
@@ -34,4 +39,9 @@ folder_colors={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+textures/default_filters/anisotropic_filtering_level=0
+textures/decals/filter=0
+textures/light_projectors/filter=0
+2d/snap/snap_2d_vertices_to_pixel=true
