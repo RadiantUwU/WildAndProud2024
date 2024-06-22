@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://1yk3u8ykcpl4"]
+
+[ext_resource type="Script" path="res://scripts/menu/mainMenu.gd" id="1_n14sm"]
+[ext_resource type="Script" path="res://scripts/menu/welcomeMenu.gd" id="2_qgg5s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gl4i"]
+font_size = 96
+
+[sub_resource type="LabelSettings" id="LabelSettings_w5i50"]
+font_size = 48
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n14sm")
+
+[node name="WelcomeScreen" type="CanvasGroup" parent="."]
+script = ExtResource("2_qgg5s")
+
+[node name="Label" type="Label" parent="WelcomeScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1152.0
+offset_bottom = 300.0
+grow_horizontal = 2
+text = "Leafy Leisure"
+label_settings = SubResource("LabelSettings_3gl4i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 648.0
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayGame" type="TextureButton" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WelcomeScreen/VBoxContainer/PlayGame"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Play Game"
+label_settings = SubResource("LabelSettings_w5i50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WelcomeScreen/VBoxContainer/Settings"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_w5i50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WelcomeScreen/VBoxContainer/Credits"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_w5i50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WelcomeScreen/VBoxContainer/Quit"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_w5i50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayScreen" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="SettingsScreen" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="CreditsScreen" type="CanvasGroup" parent="."]
+visible = false
+
+[connection signal="pressed" from="WelcomeScreen/VBoxContainer/PlayGame" to="WelcomeScreen" method="_on_play_game_pressed"]
+[connection signal="pressed" from="WelcomeScreen/VBoxContainer/Settings" to="WelcomeScreen" method="_on_settings_pressed"]
+[connection signal="pressed" from="WelcomeScreen/VBoxContainer/Credits" to="WelcomeScreen" method="_on_credits_pressed"]
+[connection signal="pressed" from="WelcomeScreen/VBoxContainer/Quit" to="WelcomeScreen" method="_on_quit_pressed"]
