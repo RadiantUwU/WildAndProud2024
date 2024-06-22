@@ -2,5 +2,12 @@ extends Node
 
 class_name GameState
 
-func initGameState():
-	var savedData = Save_Loader.gameData
+# use this class for current playthrough's player data
+
+var savedData: Dictionary
+
+func initGameState(gameData: GameData):
+	savedData = gameData.data
+
+func updateSaveFile():
+	Save_Loader.overwriteSaveFile(savedData)
