@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://1yk3u8ykcpl4"]
+[gd_scene load_steps=7 format=3 uid="uid://1yk3u8ykcpl4"]
 
 [ext_resource type="Script" path="res://scripts/menu/mainMenu.gd" id="1_n14sm"]
 [ext_resource type="Script" path="res://scripts/menu/welcomeMenu.gd" id="2_qgg5s"]
+[ext_resource type="Script" path="res://scripts/menu/settingsMenu.gd" id="3_8alsp"]
+[ext_resource type="PackedScene" uid="uid://bsps5nd8dwjmk" path="res://nodes/settings_menu_panel.tscn" id="3_mp7py"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3gl4i"]
-font_size = 96
+font_size = 82
 
 [sub_resource type="LabelSettings" id="LabelSettings_w5i50"]
 font_size = 48
@@ -19,14 +21,15 @@ grow_vertical = 2
 script = ExtResource("1_n14sm")
 
 [node name="WelcomeScreen" type="CanvasGroup" parent="."]
+visible = false
 script = ExtResource("2_qgg5s")
 
-[node name="Label" type="Label" parent="WelcomeScreen"]
+[node name="Title" type="Label" parent="WelcomeScreen"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_right = 1152.0
-offset_bottom = 300.0
+offset_bottom = 250.0
 grow_horizontal = 2
 text = "Leafy Leisure"
 label_settings = SubResource("LabelSettings_3gl4i")
@@ -102,11 +105,54 @@ vertical_alignment = 1
 [node name="PlayScreen" type="CanvasGroup" parent="."]
 visible = false
 
+[node name="Title" type="Label" parent="PlayScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1152.0
+offset_bottom = 250.0
+grow_horizontal = 2
+text = "Select Save File"
+label_settings = SubResource("LabelSettings_3gl4i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SettingsScreen" type="CanvasGroup" parent="."]
 visible = false
+script = ExtResource("3_8alsp")
+
+[node name="Title" type="Label" parent="SettingsScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1152.0
+offset_bottom = 250.0
+grow_horizontal = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_3gl4i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsMenuPanel" parent="SettingsScreen" instance=ExtResource("3_mp7py")]
+offset_left = 0.0
+offset_top = 200.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="CreditsScreen" type="CanvasGroup" parent="."]
 visible = false
+
+[node name="Title" type="Label" parent="CreditsScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1152.0
+offset_bottom = 250.0
+grow_horizontal = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_3gl4i")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/PlayGame" to="WelcomeScreen" method="_on_play_game_pressed"]
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/Settings" to="WelcomeScreen" method="_on_settings_pressed"]
