@@ -22,6 +22,7 @@ PalleteSystem="*res://autoload/apply_palette.tscn"
 
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+mouse_cursor/custom_image="res://textures/trans_cursor.png"
 
 [file_customization]
 
