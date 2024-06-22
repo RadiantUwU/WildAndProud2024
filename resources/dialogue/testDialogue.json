@@ -21,7 +21,7 @@
 						"onSelection": ["goToSection,Test3"]
 					},
 					{
-						"line": "Go to Test1",
+						"line": "Go to Test1 but ferret",
 						"onSelection": ["goToSection,Test", "changeEmotion,surprised"]
 					},
 					{
@@ -46,7 +46,7 @@
 				"line": "You can go back to Test1 or quit dialogue",
 				"options": [
 					{
-						"line": "Go to Test1",
+						"line": "Go to Test1 but ferret",
 						"onSelection": ["goToSection,Test", "changeEmotion,surprised"]
 					},
 					{
