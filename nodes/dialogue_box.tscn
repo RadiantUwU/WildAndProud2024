@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6yjy7eiqa3gy"]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogueHandler.gd" id="1_6ky22"]
+[ext_resource type="PackedScene" uid="uid://dpn3yycnujsm5" path="res://nodes/dialogue_option.tscn" id="2_lc5v5"]
+[ext_resource type="Texture2D" uid="uid://cvdg0xwvh1j7d" path="res://sprites/dialogue option panel.png" id="3_6s1te"]
+[ext_resource type="Texture2D" uid="uid://biv7nh7ehpe04" path="res://sprites/dialogue box panel.png" id="4_xhhqw"]
+[ext_resource type="Texture2D" uid="uid://d3trt17hd66lk" path="res://sprites/testSpeaker/surprised.png" id="5_1yml7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dauba"]
+font_size = 22
+
+[node name="DialogueBox" type="CanvasGroup"]
+visible = false
+z_index = 90
+position = Vector2(575, 325)
+script = ExtResource("1_6ky22")
+
+[node name="DialogueOption1" parent="." instance=ExtResource("2_lc5v5")]
+z_index = 100
+offset_left = -300.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 0.0
+
+[node name="DialogueOption2" parent="." instance=ExtResource("2_lc5v5")]
+z_index = 100
+offset_left = -300.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 0.0
+
+[node name="DialogueOption3" parent="." instance=ExtResource("2_lc5v5")]
+z_index = 100
+offset_left = -300.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 0.0
+
+[node name="DialogueOption4" parent="." instance=ExtResource("2_lc5v5")]
+z_index = 100
+offset_left = -300.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 0.0
+
+[node name="MainTextPanel" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -526.0
+offset_top = 150.0
+offset_right = 526.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_6s1te")
+
+[node name="SpeakerNamePanel" type="TextureRect" parent="MainTextPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_top = -175.0
+offset_right = 576.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_xhhqw")
+
+[node name="SpeakerNameLabel" type="Label" parent="MainTextPanel"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = -22.0
+offset_right = 257.0
+offset_bottom = 13.0
+text = "Test Speaker"
+label_settings = SubResource("LabelSettings_dauba")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainTextLabel" type="Label" parent="MainTextPanel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 1027.0
+offset_bottom = 135.0
+text = "Test Speaker lines will be placed right here. Check of the font size for speaker's name and the text in here are correct. Get your own Pirate Pass by typing 7 in chat."
+label_settings = SubResource("LabelSettings_dauba")
+autowrap_mode = 2
+
+[node name="SpeakerSprite" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 225.0
+offset_top = -150.0
+offset_right = 525.0
+offset_bottom = 150.0
+texture = ExtResource("5_1yml7")
+
+[connection signal="pressed" from="DialogueOption1" to="." method="_on_dialogue_option_1_pressed"]
+[connection signal="pressed" from="DialogueOption2" to="." method="_on_dialogue_option_2_pressed"]
+[connection signal="pressed" from="DialogueOption3" to="." method="_on_dialogue_option_3_pressed"]
+[connection signal="pressed" from="DialogueOption4" to="." method="_on_dialogue_option_4_pressed"]
