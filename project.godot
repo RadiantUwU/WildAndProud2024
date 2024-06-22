@@ -11,12 +11,16 @@ config_version=5
 [application]
 
 config/name="teagame :3"
+run/main_scene="res://nodes/Levels/test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PalleteSystem="*res://autoload/apply_palette.tscn"
+Save_Loader="*res://scripts/savefile/save_loader.gd"
+GameStateHolder="*res://scripts/savefile/game_state_holder.gd"
+DialogueBox="*res://nodes/dialogue_box.tscn"
 
 [display]
 

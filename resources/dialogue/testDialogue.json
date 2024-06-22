@@ -1,0 +1,86 @@
+[
+	{
+		"section": "Test",
+		"condition": true,
+		"lines": [
+			{
+				"name": "Test",
+				"line": "This is test dialogue",
+				"options": []
+			},
+			{
+				"name": "Test",
+				"line": "Here you can progress naturally, go to section 'Test3', or even go back to 'Test1'. Pick option 4 to end dialogue",
+				"options": [
+					{
+						"line": "Go to Test2",
+						"onSelection": []
+					},
+					{
+						"line": "Go to Test3",
+						"onSelection": ["goToSection,Test3"]
+					},
+					{
+						"line": "Go to Test1",
+						"onSelection": ["goToSection,Test1", "changeEmotion,surprised"]
+					},
+					{
+						"line": "Quit Dialogue",
+						"onSelection": ["quit"]
+					}
+				]
+			}
+		]
+	},
+	{
+		"section": "Test2",
+		"condition": true,
+		"lines": [
+			{
+				"name": "Test",
+				"line": "This is section Test2 of this testDialogue",
+				"options": []
+			},
+			{
+				"name": "Test",
+				"line": "You can go back to Test1 or quit dialogue",
+				"options": [
+					{
+						"line": "Go to Test1",
+						"onSelection": ["goToSection,Test1", "changeEmotion,surprised"]
+					},
+					{
+						"line": "Quit Dialogue",
+						"onSelection": ["quit"]
+					}
+				]
+			}
+		]
+	}
+	,
+	{
+		"section": "Test3",
+		"condition": true,
+		"lines": [
+			{
+				"name": "Test Number 3",
+				"line": "This is section Test3 of this testDialogue. Notice the name changes.",
+				"options": []
+			},
+			{
+				"name": "Test Number 3",
+				"line": "You can go to Test3 or quit dialogue",
+				"options": [
+					{
+						"line": "Go to Test2",
+						"onSelection": ["goToSection,Test2"]
+					},
+					{
+						"line": "Quit Dialogue",
+						"onSelection": ["quit"]
+					}
+				]
+			}
+		]
+	}
+]
