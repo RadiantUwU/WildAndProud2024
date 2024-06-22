@@ -15,6 +15,10 @@ run/main_scene="res://nodes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://new_audio_bus_layout.tres"
+
 [autoload]
 
 PalleteSystem="*res://autoload/apply_palette.tscn"
