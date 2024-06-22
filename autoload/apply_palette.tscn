@@ -1,13 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dec43synrdybt"]
+[gd_scene load_steps=6 format=3 uid="uid://dec43synrdybt"]
 
 [ext_resource type="Script" path="res://scripts/PaletteSystem.gd" id="1_dpejj"]
 [ext_resource type="Material" uid="uid://ch5lmu5m2ef2c" path="res://materials/RestrictToPalette.tres" id="1_vrohn"]
+[ext_resource type="Texture2D" uid="uid://fenexmmoplv" path="res://textures/awa.webp" id="2_o1veu"]
+[ext_resource type="Texture2D" uid="uid://c1qaialaaqfo3" path="res://textures/pride_palette.png" id="2_pmwyj"]
+[ext_resource type="Texture2D" uid="uid://esp80j7x7tm8" path="res://textures/wawa.webp" id="3_xjw1m"]
 
 [node name="Node2D" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_dpejj")
 
+[node name="Awa" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(540, 192)
+scale = Vector2(118.127, 118.127)
+texture = ExtResource("2_pmwyj")
+
+[node name="Wawa" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(6, 458)
+texture = ExtResource("3_xjw1m")
+
+[node name="Awa2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(17, 242)
+texture = ExtResource("2_o1veu")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
 material = ExtResource("1_vrohn")
 anchors_preset = 15
 anchor_right = 1.0
