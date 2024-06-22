@@ -52,8 +52,9 @@ func openDialogueBox(dialogueTreeName):
 	
 # clear out the dialogue from the box and hide it
 func hideDialogueBox():	
-	self.currentDialogueTree = null
-	self.currentDialogueTreeEntry = null
+	self.currentDialogue = []
+	self.currentSection = null
+	self.currentLine = null
 	unfurlText()
 	self.visible = false
 
@@ -102,19 +103,15 @@ func printOutText():
 		
 
 func _on_dialogue_option_1_pressed():
-	print("0")
 	onOptionSelection(0)
 
 func _on_dialogue_option_2_pressed():
-	print("1")
 	onOptionSelection(1)
 
 func _on_dialogue_option_3_pressed():
-	print("2")
 	onOptionSelection(2)
 
 func _on_dialogue_option_4_pressed():
-	print("3")
 	onOptionSelection(3)
 	
 func onOptionSelection(optionIndex):
