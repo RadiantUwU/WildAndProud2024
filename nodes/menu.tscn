@@ -140,7 +140,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="CreditsScreen" type="CanvasGroup" parent="."]
-visible = false
 
 [node name="Title" type="Label" parent="CreditsScreen"]
 anchors_preset = 5
@@ -153,6 +152,40 @@ text = "Credits"
 label_settings = SubResource("LabelSettings_3gl4i")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditsScreen"]
+offset_top = 247.0
+offset_right = 1152.0
+offset_bottom = 641.0
+
+[node name="Label" type="Label" parent="CreditsScreen/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+Credit Text here
+"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/PlayGame" to="WelcomeScreen" method="_on_play_game_pressed"]
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/Settings" to="WelcomeScreen" method="_on_settings_pressed"]
