@@ -6,7 +6,7 @@
 
 [resource]
 shader = ExtResource("1_l4rmm")
-shader_parameter/dither = true
+shader_parameter/dither = false
 shader_parameter/dither_scale = 147.702
 shader_parameter/u_palette = ExtResource("2_bomyg")
 shader_parameter/u_dither = ExtResource("2_x46ie")

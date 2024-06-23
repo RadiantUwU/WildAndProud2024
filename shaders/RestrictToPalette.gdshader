@@ -49,7 +49,7 @@ void closest2(inout vec3 source_col, in float aspect_ratio, in vec2 uv) {
 	} else {
 		float vd = distance(c1,c2);
 		float vz = ld1-ld2+vd;
-		
+
 		float to_dither = vz;
 		to_dither += texture(u_dither, uv*dither_scale*vec2(aspect_ratio,1)).r;
 		if (to_dither > .5)
