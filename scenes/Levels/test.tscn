@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://5py8gc3ytdgn"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
-[ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://scenes/Levels/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
+[ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
 [ext_resource type="Texture2D" uid="uid://c7lj8aw1ne8fk" path="res://textures/TeaMachine.png" id="3_ug6su"]
 [ext_resource type="Texture2D" uid="uid://doisrcnncdrlo" path="res://textures/Teagame Counter (2).png" id="4_m2eu7"]
 [ext_resource type="Texture2D" uid="uid://bp7ojdfvuq6jd" path="res://textures/TeaMachineButton.png" id="5_8chp2"]
