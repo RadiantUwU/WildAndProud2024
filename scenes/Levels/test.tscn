@@ -20,6 +20,9 @@ gravity = Vector3(0, 98, 0)
 radial_accel_min = -29.56
 radial_accel_max = -23.92
 attractor_interaction_enabled = false
+scale_min = 12.02
+scale_max = 12.02
+color = Color(0.860546, 0.462042, 3.85046e-07, 1)
 turbulence_noise_scale = 1.473
 
 [node name="Test" type="Node2D"]
@@ -69,11 +72,12 @@ position = Vector2(-1.46143, 45.1461)
 scale = Vector2(3.26942, 2.94978)
 texture = ExtResource("6_s3qth")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="TeaMachine"]
+[node name="tea_particles" type="GPUParticles2D" parent="TeaMachine"]
 position = Vector2(0, 16)
+emitting = false
 amount = 223
 process_material = SubResource("ParticleProcessMaterial_vuxh2")
-lifetime = 1.27
+lifetime = 1.14
 fixed_fps = 60
 
 [node name="TeagameCounter(2)" type="Sprite2D" parent="."]
