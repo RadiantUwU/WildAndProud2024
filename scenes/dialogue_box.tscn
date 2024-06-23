@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6yjy7eiqa3gy"]
+[gd_scene load_steps=6 format=3 uid="uid://b6yjy7eiqa3gy"]
 
 [ext_resource type="Script" path="res://scripts/dialogue/dialogueHandler.gd" id="1_6ky22"]
 [ext_resource type="PackedScene" uid="uid://dpn3yycnujsm5" path="res://scenes/dialogue_option.tscn" id="2_lc5v5"]
-[ext_resource type="Texture2D" uid="uid://cvdg0xwvh1j7d" path="res://textures/sprites/dialogue option panel.png" id="3_6s1te"]
-[ext_resource type="Texture2D" uid="uid://biv7nh7ehpe04" path="res://textures/sprites/dialogue box panel.png" id="4_xhhqw"]
-[ext_resource type="Texture2D" uid="uid://d3trt17hd66lk" path="res://textures/sprites/testSpeaker/surprised.png" id="5_1yml7"]
+[ext_resource type="Texture2D" uid="uid://duofr7exc0k4r" path="res://textures/Dialogue box adjusted.png" id="3_r785j"]
+[ext_resource type="Texture2D" uid="uid://ck4qcnnfalksc" path="res://textures/sprites/willow/default.png" id="5_n783r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dauba"]
 font_size = 22
@@ -16,89 +15,94 @@ position = Vector2(575, 325)
 script = ExtResource("1_6ky22")
 
 [node name="DialogueOption1" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -300.0
+offset_left = -500.0
 offset_top = -60.0
-offset_right = 200.0
-offset_bottom = 0.0
+offset_right = -200.0
+offset_bottom = -10.0
 
 [node name="DialogueOption2" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -300.0
+offset_left = -500.0
 offset_top = -60.0
-offset_right = 200.0
-offset_bottom = 0.0
+offset_right = -200.0
+offset_bottom = -10.0
 
 [node name="DialogueOption3" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -300.0
+offset_left = -500.0
 offset_top = -60.0
-offset_right = 200.0
-offset_bottom = 0.0
+offset_right = -200.0
+offset_bottom = -10.0
 
 [node name="DialogueOption4" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -300.0
+offset_left = -500.0
 offset_top = -60.0
-offset_right = 200.0
-offset_bottom = 0.0
+offset_right = -200.0
+offset_bottom = -10.0
 
-[node name="MainTextPanel" type="TextureRect" parent="."]
+[node name="MainText" type="Node2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="MainTextPanel" type="TextureRect" parent="MainText"]
+self_modulate = Color(0.497474, 0.497474, 0.497474, 1)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -526.0
-offset_top = 150.0
-offset_right = 526.0
-offset_bottom = 300.0
+offset_top = 50.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.85, 1.25)
 mouse_filter = 2
-texture = ExtResource("3_6s1te")
+texture = ExtResource("3_r785j")
 
-[node name="SpeakerNamePanel" type="TextureRect" parent="MainTextPanel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -476.0
-offset_top = -175.0
-offset_right = 576.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_xhhqw")
-
-[node name="SpeakerNameLabel" type="Label" parent="MainTextPanel"]
-layout_mode = 0
-offset_left = 57.0
-offset_top = -22.0
-offset_right = 257.0
-offset_bottom = 13.0
-text = "Test Speaker"
-label_settings = SubResource("LabelSettings_dauba")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MainTextLabel" type="Label" parent="MainTextPanel"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 20.0
-offset_right = 1027.0
-offset_bottom = 135.0
-text = "Test Speaker lines will be placed right here. Check of the font size for speaker's name and the text in here are correct. Get your own Pirate Pass by typing 7 in chat."
+[node name="MainTextLabel" type="Label" parent="MainText"]
+offset_left = -504.75
+offset_top = 70.0
+offset_right = -104.75
+offset_bottom = 270.0
+text = "Test Speaker lines will be placed right here. Get your own Pirate Pass by typing 7 in chat."
 label_settings = SubResource("LabelSettings_dauba")
 autowrap_mode = 2
 
 [node name="SpeakerSprite" type="TextureRect" parent="."]
 z_index = -1
-offset_left = 225.0
-offset_top = -150.0
-offset_right = 525.0
-offset_bottom = 150.0
+offset_left = -100.0
+offset_top = -135.0
+offset_right = 200.0
+offset_bottom = 165.0
 mouse_filter = 2
-texture = ExtResource("5_1yml7")
+texture = ExtResource("5_n783r")
+
+[node name="SpeakerName" type="Node2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="SpeakerNamePanel" type="TextureRect" parent="SpeakerName"]
+self_modulate = Color(0.423651, 0.423651, 0.423651, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -517.5
+offset_top = 25.0
+offset_right = 534.5
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_r785j")
+
+[node name="SpeakerNameLabel" type="Label" parent="SpeakerName"]
+offset_left = -513.25
+offset_top = 28.0
+offset_right = -313.25
+offset_bottom = 63.0
+text = "Test Speaker"
+label_settings = SubResource("LabelSettings_dauba")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="DialogueOption1" to="." method="_on_dialogue_option_1_pressed"]
 [connection signal="pressed" from="DialogueOption2" to="." method="_on_dialogue_option_2_pressed"]

@@ -11,21 +11,21 @@ var isPrintingOutText = false
 
 @onready var dialogueOptions = [$DialogueOption1, $DialogueOption2, $DialogueOption3, $DialogueOption4]
 @onready var speakerSprite = $SpeakerSprite
-@onready var speakerNameLabel = $MainTextPanel/SpeakerNameLabel
-@onready var mainTextLabel = $MainTextPanel/MainTextLabel
+@onready var speakerNameLabel = $SpeakerName/SpeakerNameLabel
+@onready var mainTextLabel = $MainText/MainTextLabel
 
 var justOpened: bool = false
 
 var expectedDialogueOptionsPositions = [
 	[],
-	[Vector2(-300, -80)],
-	[Vector2(-300, -140), Vector2(-300, -20)],
-	[Vector2(-300,-170), Vector2(-300, -80), Vector2(-300, 10)],
-	[Vector2(-300,-200), Vector2(-300, -120), Vector2(-300, -40), Vector2(-300, 40)]
+	[Vector2(-450, -80)],
+	[Vector2(-450, -130), Vector2(-450, -30)],
+	[Vector2(-450,-140), Vector2(-450, -80), Vector2(-450, 20)],
+	[Vector2(-450,-180), Vector2(-450, -120), Vector2(-450, -60), Vector2(-450, 0)]
 ]
 
 var dialogueSpeakerSpriteCatalogPaths = {
-	"testDialogue": "res://sprites/testSpeaker"
+	"willowDialogue1": "res://textures/sprites/willow"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -82,6 +82,9 @@ func unfurlText():
 		option.visible = false
 	mainTextLabel.text = "" if currentLine == null else currentLine.line	
 	speakerNameLabel.text = "" if currentLine == null else currentLine.name
+	if currentLine != null:
+		speakerSprite.texture = ResourceLoader.load(dialogueSpeakerSpriteCatalogPaths[currentDialogueTreeName]+"/"+currentLine.emotion+".png")
+
 	createDialogueOptions()
 
 # create clickable boxes containing different dialogue options and place them on the screen in an aesthetic manner
@@ -122,17 +125,7 @@ func onOptionSelection(optionIndex):
 	if len(selectedOption.onSelection) <= 0:
 		advanceLines()
 	else:
-		for selectionEvent in selectedOption.onSelection:
-			var split = selectionEvent.split(",")
-			match split[0]:
-				"quit":
-					hideDialogueBox()
-				"goToSection":
-					goToSection(split[1])
-				"changeEmotion":
-					changeEmotion(split[1])
-				_:
-					pass
+		handleDialogueEvents(selectedOption.onSelection)
 		
 func openJsonAsDialogue(dialogueTree: String) -> Array[DialogueSection]:
 	var path = "res://resources/dialogue/"+dialogueTree+".json"
@@ -147,14 +140,17 @@ func openJsonAsDialogue(dialogueTree: String) -> Array[DialogueSection]:
 				for rawOnSelection in rawOption["onSelection"]:
 					onSelection.append(rawOnSelection)
 				options.append(DialogueOption.new(rawOption["line"], onSelection))
-			lines.append(DialogueLine.new(rawLine["name"], rawLine["line"], options))
-		sections.append(DialogueSection.new(rawSection["section"], rawSection["condition"], lines))
+			lines.append(DialogueLine.new(rawLine["name"], rawLine["line"], rawLine["emotion"], options))
+		var onCompletion: Array[String] = []
+		for rawOnCompletion in rawSection["onCompletion"]:
+			onCompletion.append(rawOnCompletion)
+		sections.append(DialogueSection.new(rawSection["section"], lines, onCompletion))
 	return sections
 		
 func advanceSections():
 	var found = false
 	for i in range(currentSectionNumber + 1, len(currentDialogue)):
-		if currentDialogue[i].condition and !found:
+		if !found:
 			currentSectionNumber = i
 			currentSection = currentDialogue[i]
 			currentLine = currentSection.lines[0]
@@ -167,10 +163,24 @@ func advanceSections():
 func advanceLines():
 	currentLineNumber += 1
 	if len(currentSection.lines) == currentLineNumber:
-		advanceSections()
+		if len(currentSection.onCompletion) == 0:
+			advanceSections()
+		else:
+			handleDialogueEvents(currentSection.onCompletion)
 	else:
 		currentLine = currentSection.lines[currentLineNumber]
 		unfurlText()
+
+func handleDialogueEvents(dialogueEvents: Array[String]):
+	for event in dialogueEvents:
+		var split = event.split(",")
+		match split[0]:
+			"quit":
+				hideDialogueBox()
+			"goToSection":
+				goToSection(split[1])
+			_:
+				pass
 		
 func goToSection(sectionName: String):
 	for i in len(currentDialogue):

@@ -1,0 +1,349 @@
+[
+	{
+		"section": "Willow1Start",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Hello there chief! It’s me, Willow! How has your day been?",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "It has been a while since I have been here the last time, but I really needed to unwind, so I thought I will hop over!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I really liked your tea selection, you know? You could always pick out and brew me something if I just told you what notes I feel like today.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Today, I feel like getting myself sweet and very flavorful. Could you prepare something like that for me, please?",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "If that helps - I remember you telling me about your special cinnamon chai. I want something similar to that. Thank you!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Willow1Start", "setCurrentTea,Willow1"]
+	},
+	
+	{
+		"section": "Willow1TeaFailure",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Uhm… Thank you for this blend. It is… certainly… interesting?",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I wouldn’t want to be rude or to bash on your efforts, but that’s… kind of not what I had in mind.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Normally, I would just accept it, but I think I should really start asserting myself.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "So could you please remake the tea, please? Remember - something sweet and full of flavor. Cinnamon chai or something similar.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Sorry for troubling you!",
+				"emotion": "happy",
+				"options": []
+			},			
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Willow1TeaFailure"]
+	},
+	
+	{
+		"section": "Willow1TeaFlawless",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Hehehe… Thanks a lot! That was exactly what I had in mind!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection", "Willow1Inquire"],
+	},
+	
+	{
+		"section": "Willow1TeaSuccess",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Hehe, now that is much better. Thanks for remaking that order for me!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection", "Willow1Inquire"],
+	},
+	{
+		"section": "Willow1Inquire",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Oh, that got me thinking…",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "What’s your favorite type of tea, by the way?",
+				"emotion": "happy",
+				"options": [
+					{
+						"line": "I prefer flavored blends",
+						"onSelection": ["goToSection,FlavoredBlends"]
+					},
+					{
+						"line": "Something like pu-erh",
+						"onSelection": ["goToSection,PuErh"]
+					},
+					{
+						"line": "Herbal or white tea are more of my thing",
+						"onSelection": ["goToSection,HerbalAndWhite"]
+					},
+					{
+						"line": "I’m more of a coffee person",
+						"onSelection": ["goToSection,coffee"]
+					}
+				]
+			},
+		],
+		"onCompletion": []
+	},
+	
+	{
+		"section": "FlavoredBlends",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Oh, I see, I see!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I heard that fans of flavored blends tend to be open-minded and creative. They are often quite playful, and like to break the rules from time to time.",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection", "DoesItFit"],
+	},
+	
+	{
+		"section": "PuErh",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Hmmm, that’s interesting…",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "From what I heard, fans of tastes like that have good attention to detail and are very goal-oriented. They like “playing the long game”, so to speak.",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection", "DoesItFit"],
+	},
+	
+	{
+		"section": "HerbalAndWhite",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Oh, that’s nice!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Those kinds of tea are very delicate in flavor, so people who like them very often care about beauty, and finding enjoyment in simple things.",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection", "DoesItFit"],
+	},
+	
+	{
+		"section": "Coffee",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Oh? That’s surprising, since you’re running a tea shop and all.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But I think I get it! Coffee drinkers tend to be more daring, and also more diligent about the things they do.",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection", "DoesItFit"],
+	},
+	
+	{
+		"section": "DoesItFit",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Do you think that fits you?",
+				"emotion": "default",
+				"options": [
+					{
+						"line": "I Actually, kind of yes",
+						"onSelection": ["goToSection,ItDoesFit"]
+					},
+					{
+						"line": "No, not really",
+						"onSelection": ["goToSection,ItDoesntFit"]
+					},
+				]
+			}
+		],
+		"onCompletion": [],
+	},
+	{
+		"section": "ItDoesFit",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Hehe! Thanks for indulging my curiosity!",
+				"emotion": "happy",
+				"options": []
+			}
+		],
+		"onCompletion": ["goToSection,Willow1BreakupStory"],
+	},
+	{
+		"section": "ItDoesntFit",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Hehe, that is what I heard anyway, so you can take it with a pinch of salt. But thanks for answering!",
+				"emotion": "happy",
+				"options": []
+			}
+		],
+		"onCompletion": ["goToSection,Willow1BreakupStory"],
+	},
+	
+	{
+		"section": "Willow1BreakupStory",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "But anyway, you may wonder why I’m here all of a sudden.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I wouldn’t want to dump my personal life details on you, but I think I can trust you.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Truth be told, I broke up with my partner recently. But she wasn’t, like, bad towards me or anything. She was wonderful!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "For the most part, that is.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But I started to feel that she treats me like a baby.",
+				"emotion": "sad",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "She would get very overbearing and controlling whenever I wanted to do things on my own, without involving her in everything.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "She would always ask me questions like 'are you sure you want to do this?' or 'maybe we should be doing something else instead?'",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I’m an adult, you know! I’m allowed to have my own opinions! My own ideas about what I should be doing!",
+				"emotion": "angry",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I think there comes a time where you just have to let go and let people really be themselves.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "...",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Yeah. So that’s that.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Hope I didn’t bother you, I just had to let it out.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Thanks for listening! I knew I could count on a sympathetic ear, at least.",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But I really need to get going. Catch you later!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Willow1", "startCountdown,Paisley1"],
+	},
+]

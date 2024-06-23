@@ -1,7 +1,6 @@
 [
 	{
 		"section": "Test",
-		"condition": true,
 		"lines": [
 			{
 				"name": "Test",
@@ -34,7 +33,6 @@
 	},
 	{
 		"section": "Test2",
-		"condition": true,
 		"lines": [
 			{
 				"name": "Test",
@@ -60,7 +58,6 @@
 	,
 	{
 		"section": "Test3",
-		"condition": true,
 		"lines": [
 			{
 				"name": "Test Number 3",

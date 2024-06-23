@@ -108,11 +108,13 @@ scale = Vector2(1.87963, 0.956698)
 texture = ExtResource("7_heehe")
 
 [node name="TeagamePaisleyDefault" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(583, 273)
 scale = Vector2(1.97266, 2.08594)
 texture = ExtResource("8_77ps3")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(237, 528)
 scale = Vector2(3.38477, 2.58984)
