@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5py8gc3ytdgn"]
+[gd_scene load_steps=12 format=3 uid="uid://5py8gc3ytdgn"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
 [ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
@@ -12,14 +12,18 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1xyo"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vuxh2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(11.837, 0, 1)
+gravity = Vector3(0, 98, 0)
+radial_accel_min = -29.56
+radial_accel_max = -23.92
+attractor_interaction_enabled = false
+turbulence_noise_scale = 1.473
+
 [node name="Test" type="Node2D"]
 script = ExtResource("1_kpo86")
-
-[node name="TeagameCounter(1)" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(576.5, 474.5)
-scale = Vector2(1.4987, 0.666016)
-texture = SubResource("CompressedTexture2D_y1xyo")
 
 [node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
 z_index = -1
@@ -27,64 +31,80 @@ position = Vector2(576, 324)
 scale = Vector2(3.18889, 2.67917)
 texture = ExtResource("2_mfr41")
 
+[node name="TeagameCounter(1)" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(576.5, 474.5)
+scale = Vector2(1.4987, 0.666016)
+texture = SubResource("CompressedTexture2D_y1xyo")
+
 [node name="TeaMachine" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(972, 325)
 scale = Vector2(2.05263, 1.92708)
 texture = ExtResource("3_ug6su")
 
+[node name="TeaMachineButton" type="Sprite2D" parent="TeaMachine"]
+z_index = 4
+position = Vector2(-32.1539, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaMachineButton2" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(-11.2051, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaMachineButton3" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(10.7181, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaMachineButton4" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(32.6411, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaCup" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(-1.46143, 45.1461)
+scale = Vector2(3.26942, 2.94978)
+texture = ExtResource("6_s3qth")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="TeaMachine"]
+position = Vector2(0, 16)
+amount = 223
+process_material = SubResource("ParticleProcessMaterial_vuxh2")
+lifetime = 1.27
+fixed_fps = 60
+
 [node name="TeagameCounter(2)" type="Sprite2D" parent="."]
 position = Vector2(203.5, 211)
 scale = Vector2(0.421875, 0.695)
 texture = ExtResource("4_m2eu7")
 
-[node name="TeaMachineButton" type="Sprite2D" parent="."]
-z_index = 4
-position = Vector2(906, 207)
-scale = Vector2(0.484375, 0.431373)
-texture = ExtResource("5_8chp2")
+[node name="TeagameTeabag_zip" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(58.0741, -119.424)
+scale = Vector2(1.65741, 1.02855)
+texture = ExtResource("7_heehe")
 
-[node name="TeaMachineButton" type="Sprite2D" parent="TeaMachineButton"]
-position = Vector2(88.7744, 5.06314e-05)
-texture = ExtResource("5_8chp2")
+[node name="TeagameTeabag_zip2" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(-356.741, -258.993)
+scale = Vector2(1.69445, 0.961106)
+texture = ExtResource("7_heehe")
 
-[node name="TeaMachineButton2" type="Sprite2D" parent="TeaMachineButton"]
-position = Vector2(181.678, 3.05176e-05)
-texture = ExtResource("5_8chp2")
+[node name="TeagameTeabag_zip3" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(-131.556, -271.942)
+scale = Vector2(1.86111, 1.07914)
+texture = ExtResource("7_heehe")
 
-[node name="TeaMachineButton3" type="Sprite2D" parent="TeaMachineButton"]
-position = Vector2(274.581, 3.62396e-05)
-texture = ExtResource("5_8chp2")
-
-[node name="TeaCup" type="Sprite2D" parent="TeaMachineButton"]
-position = Vector2(130.065, 475.227)
-scale = Vector2(13.8548, 13.1776)
-texture = ExtResource("6_s3qth")
-
-[node name="TeagameTeabag_zip" type="Sprite2D" parent="TeaMachineButton"]
+[node name="TeagameTeabag_zip4" type="Sprite2D" parent="TeagameCounter(2)"]
 z_index = 5
-position = Vector2(-1761.03, -166.909)
-scale = Vector2(1.41532, 1.46795)
+position = Vector2(-356.738, -109.353)
+scale = Vector2(1.625, 0.911128)
 texture = ExtResource("7_heehe")
 
-[node name="TeagameTeabag_zip2" type="Sprite2D" parent="TeaMachineButton"]
-position = Vector2(-1577.29, -171.545)
-scale = Vector2(1.6371, 1.54137)
-texture = ExtResource("7_heehe")
-
-[node name="TeagameTeabag_zip" type="Sprite2D" parent="."]
-position = Vector2(228, 128)
-scale = Vector2(0.699219, 0.714844)
-texture = ExtResource("7_heehe")
-
-[node name="TeagameTeabag_zip2" type="Sprite2D" parent="."]
-position = Vector2(53, 31)
-scale = Vector2(0.714844, 0.667969)
-texture = ExtResource("7_heehe")
-
-[node name="TeagameTeabag_zip3" type="Sprite2D" parent="."]
-position = Vector2(148, 22)
-scale = Vector2(0.785156, 0.75)
+[node name="TeagameTeabag_zip5" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(-145.777, -112.23)
+scale = Vector2(1.87963, 0.956698)
 texture = ExtResource("7_heehe")
 
 [node name="TeagamePaisleyDefault" type="Sprite2D" parent="."]
