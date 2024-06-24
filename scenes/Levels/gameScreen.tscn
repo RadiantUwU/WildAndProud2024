@@ -85,7 +85,7 @@ scale = Vector2(1.4987, 0.666016)
 texture = SubResource("CompressedTexture2D_y1xyo")
 
 [node name="TeaMachine" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 5
 position = Vector2(972, 325)
 scale = Vector2(2.05263, 1.92708)
 texture = ExtResource("3_ug6su")
@@ -362,9 +362,8 @@ text = "Rooibos Tea"
 label_settings = SubResource("LabelSettings_0ep8u")
 
 [node name="WaitingCustomerSprite" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(625, 340)
-scale = Vector2(1.18, 1.18)
+scale = Vector2(2, 2)
 texture = ExtResource("8_77ps3")
 
 [node name="NextEventTimer" type="Timer" parent="."]
@@ -390,10 +389,10 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="TeaMakingPanel" parent="." instance=ExtResource("10_61bd3")]
-z_index = 2
+z_index = 5
 
 [node name="TeagameCounter(1)2" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 4
 position = Vector2(577, 489.5)
 scale = Vector2(1.5, 0.611328)
 texture = ExtResource("17_pkuif")
