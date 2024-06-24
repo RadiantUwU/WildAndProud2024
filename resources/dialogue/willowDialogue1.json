@@ -70,7 +70,7 @@
 				"options": []
 			},			
 		],
-		"onCompletion": ["quit", "saveSectionCompleted,Willow1TeaFailure"]
+		"onCompletion": ["quit", "saveSectionCompleted,Willow1TeaFailure", "setCurrentTea,Willow1"]
 	},
 	
 	{
@@ -126,7 +126,7 @@
 					},
 					{
 						"line": "I’m more of a coffee person",
-						"onSelection": ["goToSection,coffee"]
+						"onSelection": ["goToSection,Coffee"]
 					}
 				]
 			},
@@ -219,7 +219,7 @@
 				"emotion": "default",
 				"options": [
 					{
-						"line": "I Actually, kind of yes",
+						"line": "Actually, kind of yes",
 						"onSelection": ["goToSection,ItDoesFit"]
 					},
 					{

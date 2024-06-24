@@ -22,7 +22,7 @@
 			},
 			{
 				"name": "Willow",
-				"line": "I’m in a good mood today. Could you please prepare something mild and floral? Thanks in advance!",
+				"line": "I’m in a good mood today. Could you please prepare something floral and quite mild? Thanks in advance!",
 				"emotion": "happy",
 				"options": []
 			},
@@ -53,12 +53,12 @@
 			},
 			{
 				"name": "Willow",
-				"line": "Please make it again. Remember -  mild, and floral. Thanks!",
+				"line": "Please make it again. Remember -  floral and pretty mild. Thanks!",
 				"emotion": "default",
 				"options": []
 			}		
 		],
-		"onCompletion": ["quit", "saveSectionCompleted,Willow2TeaFailure"]
+		"onCompletion": ["quit", "saveSectionCompleted,Willow2TeaFailure", "setCurrentTea,Willow2"]
 	},
 	
 	{

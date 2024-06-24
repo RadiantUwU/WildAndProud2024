@@ -1,14 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://5py8gc3ytdgn"]
+[gd_scene load_steps=20 format=3 uid="uid://5py8gc3ytdgn"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
 [ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
 [ext_resource type="Texture2D" uid="uid://c7lj8aw1ne8fk" path="res://textures/TeaMachine.png" id="3_ug6su"]
+[ext_resource type="Texture2D" uid="uid://b561j7v6rk1no" path="res://textures/Tea cup stage1.png" id="3_unc3v"]
 [ext_resource type="Texture2D" uid="uid://doisrcnncdrlo" path="res://textures/Teagame Counter (2).png" id="4_m2eu7"]
+[ext_resource type="Texture2D" uid="uid://egton7d41ov1" path="res://textures/Tea cup stage2.png" id="4_wpqx6"]
 [ext_resource type="Texture2D" uid="uid://bp7ojdfvuq6jd" path="res://textures/TeaMachineButton.png" id="5_8chp2"]
+[ext_resource type="Texture2D" uid="uid://c3yhfwu38crvp" path="res://textures/Tea cup stage3.png" id="5_f8i8v"]
+[ext_resource type="Texture2D" uid="uid://ck4qcnnfalksc" path="res://textures/sprites/willow/default.png" id="6_3fppq"]
 [ext_resource type="Texture2D" uid="uid://otgppsf48rx0" path="res://textures/VoxelGI.svg" id="6_he3lx"]
 [ext_resource type="Texture2D" uid="uid://c8fg2221shmyo" path="res://textures/Tea cup.png" id="6_s3qth"]
 [ext_resource type="Texture2D" uid="uid://cpcmi0xoc0q08" path="res://textures/Teagame teabag.zip.png" id="7_heehe"]
+[ext_resource type="Texture2D" uid="uid://bm0dj2fsjn831" path="res://textures/sprites/paisley/default.png" id="7_pltyb"]
 [ext_resource type="Texture2D" uid="uid://brsyaibhi8f4e" path="res://textures/Teagame Paisley Default.png" id="8_77ps3"]
+[ext_resource type="PackedScene" uid="uid://d28pmsx4nfriv" path="res://scenes/tea_making_panel.tscn" id="10_61bd3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1xyo"]
 
@@ -35,6 +41,8 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_kpo86")
+teaStageTexture = Array[Texture2D]([ExtResource("6_s3qth"), ExtResource("3_unc3v"), ExtResource("4_wpqx6"), ExtResource("5_f8i8v")])
+waitingCustomerTextures = Array[Texture2D]([ExtResource("6_3fppq"), ExtResource("7_pltyb")])
 
 [node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
 z_index = -1
@@ -60,7 +68,7 @@ position = Vector2(-32.1539, -61.2325)
 scale = Vector2(0.235978, 0.223848)
 texture = ExtResource("5_8chp2")
 
-[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton"]
+[node name="CinnamonButton" type="Button" parent="TeaMachine/TeaMachineButton"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,7 +95,7 @@ position = Vector2(-11.2051, -61.2325)
 scale = Vector2(0.235978, 0.223848)
 texture = ExtResource("5_8chp2")
 
-[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton2"]
+[node name="MilkButton" type="Button" parent="TeaMachine/TeaMachineButton2"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,7 +122,7 @@ position = Vector2(10.7181, -61.2325)
 scale = Vector2(0.235978, 0.223848)
 texture = ExtResource("5_8chp2")
 
-[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton3"]
+[node name="JasmineButton" type="Button" parent="TeaMachine/TeaMachineButton3"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,7 +141,7 @@ offset_top = 50.9998
 offset_right = 57.2898
 offset_bottom = 73.9998
 scale = Vector2(1.182, 1.182)
-text = "Sugar"
+text = "Jasmine"
 label_settings = SubResource("LabelSettings_0ep8u")
 
 [node name="TeaMachineButton4" type="Sprite2D" parent="TeaMachine"]
@@ -141,7 +149,7 @@ position = Vector2(32.6411, -61.2325)
 scale = Vector2(0.235978, 0.223848)
 texture = ExtResource("5_8chp2")
 
-[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton4"]
+[node name="MintButton" type="Button" parent="TeaMachine/TeaMachineButton4"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,7 +168,7 @@ offset_top = 50.9998
 offset_right = 53.161
 offset_bottom = 73.9998
 scale = Vector2(1.182, 1.182)
-text = "Lemon"
+text = "Mint"
 label_settings = SubResource("LabelSettings_0ep8u")
 
 [node name="TeaCup" type="Sprite2D" parent="TeaMachine"]
@@ -194,7 +202,7 @@ position = Vector2(58.0741, -119.424)
 scale = Vector2(1.65741, 1.02855)
 texture = ExtResource("7_heehe")
 
-[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip"]
+[node name="GreenTeaButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,7 +229,7 @@ position = Vector2(-356.741, -258.993)
 scale = Vector2(1.69445, 0.961106)
 texture = ExtResource("7_heehe")
 
-[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip2"]
+[node name="WhiteTeaButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip2"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -248,7 +256,7 @@ position = Vector2(-131.556, -271.942)
 scale = Vector2(1.86111, 1.07914)
 texture = ExtResource("7_heehe")
 
-[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip3"]
+[node name="BlackTea" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip3"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -276,7 +284,7 @@ position = Vector2(-356.738, -109.353)
 scale = Vector2(1.625, 0.911128)
 texture = ExtResource("7_heehe")
 
-[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip4"]
+[node name="ChaiTeaButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip4"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -295,7 +303,7 @@ offset_top = 110.544
 offset_right = 50.8245
 offset_bottom = 133.544
 scale = Vector2(1.182, 1.182)
-text = "Black Tea"
+text = "Chai Tea"
 label_settings = SubResource("LabelSettings_0ep8u")
 
 [node name="TeagameTeabag_zip5" type="Sprite2D" parent="TeagameCounter(2)"]
@@ -303,7 +311,7 @@ position = Vector2(-145.777, -112.23)
 scale = Vector2(1.87963, 0.956698)
 texture = ExtResource("7_heehe")
 
-[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip5"]
+[node name="RooibosTea" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip5"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -322,13 +330,13 @@ offset_top = 108.286
 offset_right = 47.2114
 offset_bottom = 131.286
 scale = Vector2(1.182, 1.182)
-text = "Black Tea"
+text = "Rooibos Tea"
 label_settings = SubResource("LabelSettings_0ep8u")
 
 [node name="WaitingCustomerSprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(583, 273)
-scale = Vector2(1.97266, 2.08594)
+position = Vector2(625, 340)
+scale = Vector2(1.18, 1.18)
 texture = ExtResource("8_77ps3")
 
 [node name="NextEventTimer" type="Timer" parent="."]
@@ -353,5 +361,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="TeaMakingPanel" parent="." instance=ExtResource("10_61bd3")]
+
+[connection signal="pressed" from="TeaMachine/TeaMachineButton/CinnamonButton" to="." method="_on_cinnamon_button_pressed"]
+[connection signal="pressed" from="TeaMachine/TeaMachineButton2/MilkButton" to="." method="_on_milk_button_pressed"]
+[connection signal="pressed" from="TeaMachine/TeaMachineButton3/JasmineButton" to="." method="_on_jasmine_button_pressed"]
+[connection signal="pressed" from="TeaMachine/TeaMachineButton4/MintButton" to="." method="_on_mint_button_pressed"]
+[connection signal="pressed" from="TeagameCounter(2)/TeagameTeabag_zip/GreenTeaButton" to="." method="_on_green_tea_button_pressed"]
+[connection signal="pressed" from="TeagameCounter(2)/TeagameTeabag_zip2/WhiteTeaButton" to="." method="_on_white_tea_button_pressed"]
+[connection signal="pressed" from="TeagameCounter(2)/TeagameTeabag_zip3/BlackTea" to="." method="_on_black_tea_pressed"]
+[connection signal="pressed" from="TeagameCounter(2)/TeagameTeabag_zip4/ChaiTeaButton" to="." method="_on_chai_tea_button_pressed"]
+[connection signal="pressed" from="TeagameCounter(2)/TeagameTeabag_zip5/RooibosTea" to="." method="_on_rooibos_tea_pressed"]
 [connection signal="timeout" from="NextEventTimer" to="." method="_on_next_event_timer_timeout"]
 [connection signal="timeout" from="DayCycleTimer" to="." method="_on_day_cycle_timer_timeout"]

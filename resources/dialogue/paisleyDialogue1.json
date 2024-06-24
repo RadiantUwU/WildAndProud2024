@@ -22,7 +22,7 @@
 			},
 			{
 				"name": "Paisley",
-				"line": "Anyway, about my order… I want something mild and slightly herbaceous.",
+				"line": "Anyway, about my order… I want something a little bit strong and a little bit herbaceous.",
 				"emotion": "default",
 				"options": []
 			},
@@ -59,12 +59,12 @@
 			},
 			{
 				"name": "Paisley",
-				"line": "I asked for something mild and just a little herbaceous. And also, once you’re done serving me, you can also make one just like that for yourself as well.",
+				"line": "I asked for something just a little bit strong and a little bit herbaceous. And also, once you’re done serving me, you can also make one just like that for yourself as well.",
 				"emotion": "default",
 				"options": []
 			},	
 		],
-		"onCompletion": ["quit", "saveSectionCompleted,Paisley1TeaFailure"]
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley1TeaFailure", "setCurrentTea,Paisley1"]
 	},
 	
 	{

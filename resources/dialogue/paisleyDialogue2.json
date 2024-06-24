@@ -58,7 +58,7 @@
 				"options": []
 			},	
 		],
-		"onCompletion": ["quit", "saveSectionCompleted,Paisley2TeaFailure"]
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley2TeaFailure", "setCurrentTea,Paisley2"]
 	},
 	
 	{
@@ -134,13 +134,13 @@
 			{
 				"name": "Paisley",
 				"line": "And when she wanted to do something, I could come up with ten ways how things could go wrong.",
-				"emotion": "default",
+				"emotion": "thinking",
 				"options": []
 			},
 			{
 				"name": "Paisley",
 				"line": "So we would always end up doing the least disaster-prone things together.",
-				"emotion": "default",
+				"emotion": "thinking",
 				"options": []
 			},
 			{
@@ -152,7 +152,7 @@
 			{
 				"name": "Paisley",
 				"line": "But it’s obviously not! It’s just that I take everything into consideration.",
-				"emotion": "default",
+				"emotion": "annoyed",
 				"options": []
 			},
 			{
@@ -164,7 +164,7 @@
 			{
 				"name": "Paisley",
 				"line": "This is how they say, I guess. 'Road to hell is paved with good intentions.'",
-				"emotion": "default",
+				"emotion": "sad",
 				"options": []
 			},
 			{
@@ -182,7 +182,7 @@
 			{
 				"name": "Paisley",
 				"line": "I hope Willow is doing well…",
-				"emotion": "default",
+				"emotion": "thinking",
 				"options": [
 					{
 						"line": "Oh, about her…",
@@ -210,7 +210,7 @@
 			{
 				"name": "Paisley",
 				"line": "Thanks for listening. You’re great for that. See you!",
-				"emotion": "thinking",
+				"emotion": "confident",
 				"options": []
 			},
 		],

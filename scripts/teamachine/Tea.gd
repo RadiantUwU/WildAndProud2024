@@ -2,9 +2,9 @@ class_name Tea extends Node
 
 const CHAI_TEA = {"sweetness":+2,"flavor":+2}
 const WHITE_TEA = {"flavor":-2,"herbaceousness":-2}
-const BLACK_TEA = {"sweetness":-2,"herbaceousness":-2}
+const BLACK_TEA = {"sweetness":-2,"flavor":+2}
 const ROOIBOS_TEA = {"sweetness":+2,"herbaceousness":-2}
-const GREEN_TEA = {"sweetness":+1,"flavor":+1,"herbaceousness":-1}
+const GREEN_TEA = {"sweetness":+1,"flavor":+1,"herbaceousness":+1}
 
 const CINNAMON = {"sweetness":-1,"flavor":+1}
 const MILK = {"sweetness":+1,"flavor":-1}
@@ -70,19 +70,20 @@ func add_to_tea_mix(ingredient: Dictionary):
 	if ingredient in TEA_BASES:
 		if currentTeaBasesAmount == MAX_TEA_BASES_AMOUNT:
 		#cant do
-			return
+			return false
 		else:
 			currentTeaBasesAmount += 1
 	if ingredient in ADDITIVES:
 		if currentAdditivesAmount == MAX_ADDITIVES_AMOUNT:
 		#cant do
-			return
+			return false
 		else:
 			currentAdditivesAmount += 1
 	tea_mix.append(ingredient)
 	sweetness += ingredient.get("sweetness",0)
 	flavor += ingredient.get("flavor",0)
 	herbaceousness += ingredient.get("herbaceousness",0)
+	return true
 	
 func can_confirm_brew() -> bool:
 	return currentTeaBasesAmount == MAX_TEA_BASES_AMOUNT and currentAdditivesAmount == MAX_ADDITIVES_AMOUNT

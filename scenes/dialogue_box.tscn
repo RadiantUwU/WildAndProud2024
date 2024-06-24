@@ -10,33 +10,10 @@ font_size = 22
 
 [node name="DialogueBox" type="CanvasGroup"]
 visible = false
-z_index = 3
+top_level = true
+z_index = 50
 position = Vector2(575, 325)
 script = ExtResource("1_6ky22")
-
-[node name="DialogueOption1" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -500.0
-offset_top = -60.0
-offset_right = -200.0
-offset_bottom = -10.0
-
-[node name="DialogueOption2" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -500.0
-offset_top = -60.0
-offset_right = -200.0
-offset_bottom = -10.0
-
-[node name="DialogueOption3" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -500.0
-offset_top = -60.0
-offset_right = -200.0
-offset_bottom = -10.0
-
-[node name="DialogueOption4" parent="." instance=ExtResource("2_lc5v5")]
-offset_left = -500.0
-offset_top = -60.0
-offset_right = -200.0
-offset_bottom = -10.0
 
 [node name="MainText" type="Node2D" parent="."]
 position = Vector2(0, 40)
@@ -103,6 +80,30 @@ text = "Test Speaker"
 label_settings = SubResource("LabelSettings_dauba")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DialogueOption1" parent="." instance=ExtResource("2_lc5v5")]
+offset_left = -500.0
+offset_top = -60.0
+offset_right = -200.0
+offset_bottom = -10.0
+
+[node name="DialogueOption2" parent="." instance=ExtResource("2_lc5v5")]
+offset_left = -500.0
+offset_top = -60.0
+offset_right = -200.0
+offset_bottom = -10.0
+
+[node name="DialogueOption3" parent="." instance=ExtResource("2_lc5v5")]
+offset_left = -500.0
+offset_top = -60.0
+offset_right = -200.0
+offset_bottom = -10.0
+
+[node name="DialogueOption4" parent="." instance=ExtResource("2_lc5v5")]
+offset_left = -500.0
+offset_top = -60.0
+offset_right = -200.0
+offset_bottom = -10.0
 
 [connection signal="pressed" from="DialogueOption1" to="." method="_on_dialogue_option_1_pressed"]
 [connection signal="pressed" from="DialogueOption2" to="." method="_on_dialogue_option_2_pressed"]

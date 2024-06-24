@@ -1,6 +1,6 @@
 [
 	{
-		"section": "Paisley2Start",
+		"section": "Paisley3Start",
 		"lines": [
 			{
 				"name": "Paisley",
@@ -40,7 +40,7 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["quit", "saveSectionCompleted,Paisley3TeaFailure"]
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley3TeaFailure", "setCurrentTea,Paisley3"]
 	},
 	
 	{
@@ -146,7 +146,7 @@
 						"onSelection": ["goToSection,Paisley3Commiserate"]
 					},
 					{
-						"line": "YBut she seemed excited about it…",
+						"line": "But she seemed excited about it…",
 						"onSelection": ["goToSection,Paisley3Objection"]
 					},
 				]
