@@ -185,7 +185,7 @@ func startMakingTea(tea: String):
 		"Willow2":
 			gameStageLabel.text = "Make a floral and pretty mild tea for Willow"
 		"Willow3":
-			gameStageLabel.text = "Make a mild and herbaceous for Willow"
+			gameStageLabel.text = "Make an herbaceous and somewhat sweet tea for Willow"
 		"Paisley1":
 			gameStageLabel.text = "Make a slightly strong and slightly herbaceous tea for Paisley"
 		"Paisley2":

@@ -40,7 +40,7 @@
 			},
 			{
 				"name": "Willow",
-				"line": " I’m gonna tell you all about it, but first - I’m parched. Could you make me something slightly sweet and herbaceous?",
+				"line": " I’m gonna tell you all about it, but first - I’m parched. Could you make me something somewhat sweet and herbaceous?",
 				"emotion": "default",
 				"options": []
 			},
@@ -59,7 +59,7 @@
 			},
 			{
 				"name": "Willow",
-				"line": "That’s not going to cut it! I want you to make me a tea that is herbaceous and a little sweet! I know you have this stuff somewhere in here!",
+				"line": "That’s not going to cut it! I want you to make me a tea that is herbaceous and somewhat sweet! I know you have this stuff somewhere in here!",
 				"emotion": "default",
 				"options": []
 			}
