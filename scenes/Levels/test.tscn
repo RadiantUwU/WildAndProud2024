@@ -1,6 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://5py8gc3ytdgn"]
+[gd_scene load_steps=11 format=3 uid="uid://5py8gc3ytdgn"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
+[ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://scenes/Levels/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
+[ext_resource type="Texture2D" uid="uid://c7lj8aw1ne8fk" path="res://textures/TeaMachine.png" id="3_ug6su"]
+[ext_resource type="Texture2D" uid="uid://doisrcnncdrlo" path="res://textures/Teagame Counter (2).png" id="4_m2eu7"]
+[ext_resource type="Texture2D" uid="uid://bp7ojdfvuq6jd" path="res://textures/TeaMachineButton.png" id="5_8chp2"]
+[ext_resource type="Texture2D" uid="uid://c8fg2221shmyo" path="res://textures/Tea cup.png" id="6_s3qth"]
+[ext_resource type="Texture2D" uid="uid://cpcmi0xoc0q08" path="res://textures/Teagame teabag.zip.png" id="7_heehe"]
+[ext_resource type="Texture2D" uid="uid://brsyaibhi8f4e" path="res://textures/Teagame Paisley Default.png" id="8_77ps3"]
+[ext_resource type="Texture2D" uid="uid://bnyb53f3lxsq1" path="res://textures/Dialogue box.png" id="9_ehpko"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1xyo"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_kpo86")
+
+[node name="TeagameCounter(1)" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(576.5, 474.5)
+scale = Vector2(1.4987, 0.666016)
+texture = SubResource("CompressedTexture2D_y1xyo")
+
+[node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(3.18889, 2.67917)
+texture = ExtResource("2_mfr41")
+
+[node name="TeaMachine" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(972, 325)
+scale = Vector2(2.05263, 1.92708)
+texture = ExtResource("3_ug6su")
+
+[node name="TeagameCounter(2)" type="Sprite2D" parent="."]
+position = Vector2(203.5, 211)
+scale = Vector2(0.421875, 0.695)
+texture = ExtResource("4_m2eu7")
+
+[node name="TeaMachineButton" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(906, 207)
+scale = Vector2(0.484375, 0.431373)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaMachineButton" type="Sprite2D" parent="TeaMachineButton"]
+position = Vector2(88.7744, 5.06314e-05)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaMachineButton2" type="Sprite2D" parent="TeaMachineButton"]
+position = Vector2(181.678, 3.05176e-05)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaMachineButton3" type="Sprite2D" parent="TeaMachineButton"]
+position = Vector2(274.581, 3.62396e-05)
+texture = ExtResource("5_8chp2")
+
+[node name="TeaCup" type="Sprite2D" parent="TeaMachineButton"]
+position = Vector2(130.065, 475.227)
+scale = Vector2(13.8548, 13.1776)
+texture = ExtResource("6_s3qth")
+
+[node name="TeagameTeabag_zip" type="Sprite2D" parent="TeaMachineButton"]
+z_index = 5
+position = Vector2(-1761.03, -166.909)
+scale = Vector2(1.41532, 1.46795)
+texture = ExtResource("7_heehe")
+
+[node name="TeagameTeabag_zip2" type="Sprite2D" parent="TeaMachineButton"]
+position = Vector2(-1577.29, -171.545)
+scale = Vector2(1.6371, 1.54137)
+texture = ExtResource("7_heehe")
+
+[node name="TeagameTeabag_zip" type="Sprite2D" parent="."]
+position = Vector2(228, 128)
+scale = Vector2(0.699219, 0.714844)
+texture = ExtResource("7_heehe")
+
+[node name="TeagameTeabag_zip2" type="Sprite2D" parent="."]
+position = Vector2(53, 31)
+scale = Vector2(0.714844, 0.667969)
+texture = ExtResource("7_heehe")
+
+[node name="TeagameTeabag_zip3" type="Sprite2D" parent="."]
+position = Vector2(148, 22)
+scale = Vector2(0.785156, 0.75)
+texture = ExtResource("7_heehe")
+
+[node name="TeagamePaisleyDefault" type="Sprite2D" parent="."]
+position = Vector2(583, 273)
+scale = Vector2(1.97266, 2.08594)
+texture = ExtResource("8_77ps3")
+
+[node name="DialogueBox" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(237, 528)
+scale = Vector2(3.38477, 2.58984)
+texture = ExtResource("9_ehpko")

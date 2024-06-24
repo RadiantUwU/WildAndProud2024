@@ -140,6 +140,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="CreditsScreen" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="Title" type="Label" parent="CreditsScreen"]
 anchors_preset = 5
