@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://5py8gc3ytdgn"]
+[gd_scene load_steps=23 format=3 uid="uid://5py8gc3ytdgn"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
 [ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://brsyaibhi8f4e" path="res://textures/Teagame Paisley Default.png" id="8_77ps3"]
 [ext_resource type="Texture2D" uid="uid://duofr7exc0k4r" path="res://textures/Dialogue box adjusted.png" id="8_glrlq"]
 [ext_resource type="PackedScene" uid="uid://d28pmsx4nfriv" path="res://scenes/tea_making_panel.tscn" id="10_61bd3"]
+[ext_resource type="Texture2D" uid="uid://ca4jwb6mqlkkp" path="res://textures/Teagame Counter (1).png" id="17_pkuif"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vtd48"]
 font_size = 20
@@ -382,13 +383,20 @@ offset_left = 400.0
 offset_right = 787.0
 offset_bottom = 120.0
 grow_horizontal = 2
-text = "You wait for new customer..."
+text = "You wait for a new customer..."
 label_settings = SubResource("LabelSettings_m5jcu")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="TeaMakingPanel" parent="." instance=ExtResource("10_61bd3")]
+z_index = 2
+
+[node name="TeagameCounter(1)2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(577, 489.5)
+scale = Vector2(1.5, 0.611328)
+texture = ExtResource("17_pkuif")
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="TeaMachine/TeaMachineButton/CinnamonButton" to="." method="_on_cinnamon_button_pressed"]

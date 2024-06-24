@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://1yk3u8ykcpl4"]
+[gd_scene load_steps=14 format=3 uid="uid://1yk3u8ykcpl4"]
 
 [ext_resource type="Script" path="res://scripts/menu/mainMenu.gd" id="1_n14sm"]
+[ext_resource type="Texture2D" uid="uid://ca4jwb6mqlkkp" path="res://textures/Teagame Counter (1).png" id="2_otnuh"]
 [ext_resource type="Script" path="res://scripts/menu/welcomeMenu.gd" id="2_qgg5s"]
 [ext_resource type="Script" path="res://scripts/menu/settingsMenu.gd" id="3_8alsp"]
 [ext_resource type="PackedScene" uid="uid://bsps5nd8dwjmk" path="res://scenes/settings_menu_panel.tscn" id="3_mp7py"]
@@ -37,6 +38,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n14sm")
+
+[node name="TeagameCounter(1)2" type="Sprite2D" parent="."]
+modulate = Color(0.694118, 0.694118, 0.694118, 1)
+z_index = -1
+position = Vector2(577, 489.5)
+scale = Vector2(1.5, 0.611328)
+texture = ExtResource("2_otnuh")
+
+[node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
+modulate = Color(0.695503, 0.695503, 0.695503, 1)
+z_index = -10
+position = Vector2(576, 324)
+scale = Vector2(3.18889, 2.67917)
+texture = ExtResource("5_y64qe")
 
 [node name="WelcomeScreen" type="CanvasGroup" parent="."]
 script = ExtResource("2_qgg5s")
@@ -239,13 +254,6 @@ text = "Return"
 label_settings = SubResource("LabelSettings_iw02r")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
-modulate = Color(0.695503, 0.695503, 0.695503, 1)
-z_index = -1
-position = Vector2(576, 324)
-scale = Vector2(3.18889, 2.67917)
-texture = ExtResource("5_y64qe")
 
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/PlayGame" to="WelcomeScreen" method="_on_play_game_pressed"]
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/Settings" to="WelcomeScreen" method="_on_settings_pressed"]

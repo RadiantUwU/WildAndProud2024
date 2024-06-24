@@ -177,6 +177,7 @@ one_shot = true
 
 [node name="Restart" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
 offset_left = -10.0
 offset_top = 250.0
 offset_right = 190.0
@@ -196,6 +197,7 @@ vertical_alignment = 1
 
 [node name="Confirm" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
 offset_left = 240.0
 offset_top = 250.0
 offset_right = 440.0
