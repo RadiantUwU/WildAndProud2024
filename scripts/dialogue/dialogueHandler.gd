@@ -16,6 +16,8 @@ var isPrintingOutText = false
 
 var justOpened: bool = false
 
+var gameplayNode: GameplayNode
+
 var expectedDialogueOptionsPositions = [
 	[],
 	[Vector2(-450, -80)],
@@ -54,6 +56,7 @@ func openDialogueBox(dialogueTreeName: String, sectionName: String):
 	speakerNameLabel.text = ""
 	mainTextLabel.text = ""
 	unfurlText()
+	justOpened = false
 	
 # clear out the dialogue from the box and hide it
 func hideDialogueBox():	
@@ -91,6 +94,7 @@ func unfurlText():
 		speakerSprite.texture = ResourceLoader.load(dialogueSpeakerSpriteCatalogPaths[currentDialogueTreeName]+"/"+currentLine.emotion+".png")
 
 	createDialogueOptions()
+	isPrintingOutText = false
 
 # create clickable boxes containing different dialogue options and place them on the screen in an aesthetic manner
 # depending on the amount of options
@@ -184,6 +188,14 @@ func handleDialogueEvents(dialogueEvents: Array[String]):
 				hideDialogueBox()
 			"goToSection":
 				goToSection(split[1])
+			"setCurrentTea":
+				gameplayNode.startMakingTea(split[1])
+			"endDay":
+				gameplayNode.endDay()
+			"gameOver":
+				gameplayNode.gameOver()
+			"startCountdown":
+				gameplayNode.startCountdown(split[1])
 			_:
 				pass
 		

@@ -1,0 +1,357 @@
+[gd_scene load_steps=14 format=3 uid="uid://5py8gc3ytdgn"]
+
+[ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
+[ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
+[ext_resource type="Texture2D" uid="uid://c7lj8aw1ne8fk" path="res://textures/TeaMachine.png" id="3_ug6su"]
+[ext_resource type="Texture2D" uid="uid://doisrcnncdrlo" path="res://textures/Teagame Counter (2).png" id="4_m2eu7"]
+[ext_resource type="Texture2D" uid="uid://bp7ojdfvuq6jd" path="res://textures/TeaMachineButton.png" id="5_8chp2"]
+[ext_resource type="Texture2D" uid="uid://otgppsf48rx0" path="res://textures/VoxelGI.svg" id="6_he3lx"]
+[ext_resource type="Texture2D" uid="uid://c8fg2221shmyo" path="res://textures/Tea cup.png" id="6_s3qth"]
+[ext_resource type="Texture2D" uid="uid://cpcmi0xoc0q08" path="res://textures/Teagame teabag.zip.png" id="7_heehe"]
+[ext_resource type="Texture2D" uid="uid://brsyaibhi8f4e" path="res://textures/Teagame Paisley Default.png" id="8_77ps3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1xyo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ep8u"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vuxh2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(11.837, 0, 1)
+gravity = Vector3(0, 98, 0)
+radial_accel_min = -29.56
+radial_accel_max = -23.92
+attractor_interaction_enabled = false
+scale_min = 12.02
+scale_max = 12.02
+color = Color(0.860546, 0.462042, 3.85046e-07, 1)
+turbulence_noise_scale = 1.473
+
+[sub_resource type="LabelSettings" id="LabelSettings_m5jcu"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_kpo86")
+
+[node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(3.18889, 2.67917)
+texture = ExtResource("2_mfr41")
+
+[node name="TeagameCounter(1)" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(576.5, 474.5)
+scale = Vector2(1.4987, 0.666016)
+texture = SubResource("CompressedTexture2D_y1xyo")
+
+[node name="TeaMachine" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(972, 325)
+scale = Vector2(2.05263, 1.92708)
+texture = ExtResource("3_ug6su")
+
+[node name="TeaMachineButton" type="Sprite2D" parent="TeaMachine"]
+z_index = 4
+position = Vector2(-32.1539, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -51.0
+offset_right = -32.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeaMachine/TeaMachineButton"]
+texture_filter = 4
+offset_left = -49.5482
+offset_top = 50.9998
+offset_right = 30.4518
+offset_bottom = 73.9998
+scale = Vector2(1.182, 1.182)
+text = "Cinnamon"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeaMachineButton2" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(-11.2051, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton2"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -51.0
+offset_right = -32.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeaMachine/TeaMachineButton2"]
+texture_filter = 4
+offset_left = -18.5808
+offset_top = 50.9998
+offset_right = 61.4192
+offset_bottom = 73.9998
+scale = Vector2(1.182, 1.182)
+text = "Milk"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeaMachineButton3" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(10.7181, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton3"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -51.0
+offset_right = -32.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeaMachine/TeaMachineButton3"]
+texture_filter = 4
+offset_left = -22.7102
+offset_top = 50.9998
+offset_right = 57.2898
+offset_bottom = 73.9998
+scale = Vector2(1.182, 1.182)
+text = "Sugar"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeaMachineButton4" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(32.6411, -61.2325)
+scale = Vector2(0.235978, 0.223848)
+texture = ExtResource("5_8chp2")
+
+[node name="TextureButton" type="Button" parent="TeaMachine/TeaMachineButton4"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -51.0
+offset_right = -32.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeaMachine/TeaMachineButton4"]
+texture_filter = 4
+offset_left = -26.839
+offset_top = 50.9998
+offset_right = 53.161
+offset_bottom = 73.9998
+scale = Vector2(1.182, 1.182)
+text = "Lemon"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeaCup" type="Sprite2D" parent="TeaMachine"]
+position = Vector2(-1.46143, 45.1461)
+scale = Vector2(3.26942, 2.94978)
+texture = ExtResource("6_s3qth")
+
+[node name="tea_particles" type="GPUParticles2D" parent="TeaMachine"]
+position = Vector2(0, 16)
+emitting = false
+amount = 223
+process_material = SubResource("ParticleProcessMaterial_vuxh2")
+lifetime = 1.14
+fixed_fps = 60
+
+[node name="VoxelGi" type="Sprite2D" parent="TeaMachine"]
+modulate = Color(0, 0, 0, 0.333333)
+texture_filter = 1
+position = Vector2(-155.898, 161.384)
+rotation = 0.521853
+scale = Vector2(0.25, 0.109)
+texture = ExtResource("6_he3lx")
+
+[node name="TeagameCounter(2)" type="Sprite2D" parent="."]
+position = Vector2(203.5, 211)
+scale = Vector2(0.421875, 0.695)
+texture = ExtResource("4_m2eu7")
+
+[node name="TeagameTeabag_zip" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(58.0741, -119.424)
+scale = Vector2(1.65741, 1.02855)
+texture = ExtResource("7_heehe")
+
+[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 25.0
+offset_right = -183.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeagameCounter(2)/TeagameTeabag_zip"]
+texture_filter = 4
+offset_left = -25.743
+offset_top = 104.918
+offset_right = 54.257
+offset_bottom = 127.918
+scale = Vector2(1.182, 1.182)
+text = "Green Tea"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeagameTeabag_zip2" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(-356.741, -258.993)
+scale = Vector2(1.69445, 0.961106)
+texture = ExtResource("7_heehe")
+
+[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip2"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.1746
+offset_top = 22.4564
+offset_right = -182.175
+offset_bottom = -153.544
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeagameCounter(2)/TeagameTeabag_zip2"]
+texture_filter = 4
+offset_left = -32.1746
+offset_top = 107.79
+offset_right = 47.8254
+offset_bottom = 130.79
+scale = Vector2(1.182, 1.182)
+text = "White Tea"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeagameTeabag_zip3" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(-131.556, -271.942)
+scale = Vector2(1.86111, 1.07914)
+texture = ExtResource("7_heehe")
+
+[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip3"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.1142
+offset_top = 23.9995
+offset_right = -183.114
+offset_bottom = -152.001
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeagameCounter(2)/TeagameTeabag_zip3"]
+texture_filter = 4
+offset_left = -30.5669
+offset_top = 107.999
+offset_right = 49.4331
+offset_bottom = 130.999
+scale = Vector2(1.182, 1.182)
+text = "Black Tea"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeagameTeabag_zip4" type="Sprite2D" parent="TeagameCounter(2)"]
+z_index = 5
+position = Vector2(-356.738, -109.353)
+scale = Vector2(1.625, 0.911128)
+texture = ExtResource("7_heehe")
+
+[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip4"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.5516
+offset_top = 23.6885
+offset_right = -183.552
+offset_bottom = -152.312
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeagameCounter(2)/TeagameTeabag_zip4"]
+texture_filter = 4
+offset_left = -29.1755
+offset_top = 110.544
+offset_right = 50.8245
+offset_bottom = 133.544
+scale = Vector2(1.182, 1.182)
+text = "Black Tea"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="TeagameTeabag_zip5" type="Sprite2D" parent="TeagameCounter(2)"]
+position = Vector2(-145.777, -112.23)
+scale = Vector2(1.87963, 0.956698)
+texture = ExtResource("7_heehe")
+
+[node name="TextureButton" type="Button" parent="TeagameCounter(2)/TeagameTeabag_zip5"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.7886
+offset_top = 24.0634
+offset_right = -182.789
+offset_bottom = -151.937
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TeagameCounter(2)/TeagameTeabag_zip5"]
+texture_filter = 4
+offset_left = -32.7886
+offset_top = 108.286
+offset_right = 47.2114
+offset_bottom = 131.286
+scale = Vector2(1.182, 1.182)
+text = "Black Tea"
+label_settings = SubResource("LabelSettings_0ep8u")
+
+[node name="WaitingCustomerSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(583, 273)
+scale = Vector2(1.97266, 2.08594)
+texture = ExtResource("8_77ps3")
+
+[node name="NextEventTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DayCycleTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="NightOverlay" type="CanvasModulate" parent="."]
+
+[node name="GameStageLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 400.0
+offset_right = 787.0
+offset_bottom = 120.0
+grow_horizontal = 2
+text = "You wait for new customer..."
+label_settings = SubResource("LabelSettings_m5jcu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="timeout" from="NextEventTimer" to="." method="_on_next_event_timer_timeout"]
+[connection signal="timeout" from="DayCycleTimer" to="." method="_on_day_cycle_timer_timeout"]

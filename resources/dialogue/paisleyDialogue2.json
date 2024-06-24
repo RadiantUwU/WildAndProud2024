@@ -214,6 +214,6 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["quit", "saveSectionCompleted,Paisley2", "startCountdown,Paisley3", "endDay"]
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley2", "endDay", "startCountdown,Paisley3"]
 	}
 ]

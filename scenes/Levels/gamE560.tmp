@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://5py8gc3ytdgn"]
+[gd_scene load_steps=13 format=3 uid="uid://5py8gc3ytdgn"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
 [ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://c8fg2221shmyo" path="res://textures/Tea cup.png" id="6_s3qth"]
 [ext_resource type="Texture2D" uid="uid://cpcmi0xoc0q08" path="res://textures/Teagame teabag.zip.png" id="7_heehe"]
 [ext_resource type="Texture2D" uid="uid://brsyaibhi8f4e" path="res://textures/Teagame Paisley Default.png" id="8_77ps3"]
-[ext_resource type="Texture2D" uid="uid://bnyb53f3lxsq1" path="res://textures/Dialogue box.png" id="9_ehpko"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1xyo"]
 
@@ -321,15 +320,18 @@ scale = Vector2(1.182, 1.182)
 text = "Black Tea"
 label_settings = SubResource("LabelSettings_0ep8u")
 
-[node name="TeagamePaisleyDefault" type="Sprite2D" parent="."]
+[node name="WaitingCustomerSprite" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(583, 273)
 scale = Vector2(1.97266, 2.08594)
 texture = ExtResource("8_77ps3")
 
-[node name="DialogueBox" type="Sprite2D" parent="."]
-visible = false
-z_index = 2
-position = Vector2(237, 528)
-scale = Vector2(3.38477, 2.58984)
-texture = ExtResource("9_ehpko")
+[node name="NextEventTimer" type="Timer" parent="."]
+
+[node name="DayCycleTimer" type="Timer" parent="."]
+
+[node name="NightOverlay" type="CanvasModulate" parent="."]
+modulate = Color(1, 1, 1, 0)
+color = Color(0.431373, 0.431373, 0.117647, 1)
+
+[connection signal="timeout" from="DayCycleTimer" to="." method="_on_day_cycle_timer_timeout"]
