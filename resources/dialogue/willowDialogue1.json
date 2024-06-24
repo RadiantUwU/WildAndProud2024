@@ -83,7 +83,7 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["goToSection", "Willow1Inquire"],
+		"onCompletion": ["goToSection,Willow1Inquire"],
 	},
 	
 	{
@@ -96,7 +96,7 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["goToSection", "Willow1Inquire"],
+		"onCompletion": ["goToSection,Willow1Inquire"],
 	},
 	{
 		"section": "Willow1Inquire",
@@ -150,7 +150,7 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["goToSection", "DoesItFit"],
+		"onCompletion": ["goToSection,DoesItFit"],
 	},
 	
 	{
@@ -169,7 +169,7 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["goToSection", "DoesItFit"],
+		"onCompletion": ["goToSection,DoesItFit"],
 	},
 	
 	{
@@ -188,7 +188,7 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["goToSection", "DoesItFit"],
+		"onCompletion": ["goToSection,DoesItFit"],
 	},
 	
 	{
@@ -207,7 +207,7 @@
 				"options": []
 			},
 		],
-		"onCompletion": ["goToSection", "DoesItFit"],
+		"onCompletion": ["goToSection,DoesItFit"],
 	},
 	
 	{

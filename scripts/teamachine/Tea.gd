@@ -13,6 +13,15 @@ const MINT = {"herbaceousness":+1,"sweetness":-1}
 const SUGAR = {"sweetness":+1}
 const LEMON_SLICE = {"flavor":+1}
 
+const TEA_BASES: Array[Dictionary] = [
+	CHAI_TEA,BLACK_TEA,WHITE_TEA,ROOIBOS_TEA,GREEN_TEA
+]
+const ADDITIVES: Array[Dictionary] = [
+	CINNAMON,MILK,JASMINE,MINT,SUGAR,LEMON_SLICE
+]
+const MAX_TEA_BASES_AMOUNT: int = 2
+const MAX_ADDITIVES_AMOUNT: int = 1
+
 static func get_item_name(x: Dictionary)->StringName:
 	match x:
 		CHAI_TEA:
@@ -54,6 +63,31 @@ func get_mix_names()->Array[StringName]:
 @export var flavor := 0
 @export var herbaceousness := 0
 
+var currentTeaBasesAmount: int = 0
+var currentAdditivesAmount: int = 0
+
+func add_to_tea_mix(ingredient: Dictionary):
+	if ingredient in TEA_BASES:
+		if currentTeaBasesAmount == MAX_TEA_BASES_AMOUNT:
+		#cant do
+			return
+		else:
+			currentTeaBasesAmount += 1
+	if ingredient in ADDITIVES:
+		if currentAdditivesAmount == MAX_ADDITIVES_AMOUNT:
+		#cant do
+			return
+		else:
+			currentAdditivesAmount += 1
+	tea_mix.append(ingredient)
+	sweetness += ingredient.get("sweetness",0)
+	flavor += ingredient.get("flavor",0)
+	herbaceousness += ingredient.get("herbaceousness",0)
+	
+func can_confirm_brew() -> bool:
+	return currentTeaBasesAmount == MAX_TEA_BASES_AMOUNT and currentAdditivesAmount == MAX_ADDITIVES_AMOUNT
+	
+
 func update_stats()->void:
 	sweetness = 0
 	flavor = 0
@@ -62,3 +96,13 @@ func update_stats()->void:
 		sweetness += i.get("sweetness",0)
 		flavor += i.get("flavor",0)
 		herbaceousness += i.get("herbaceousness",0)
+		
+func restart_brewing():
+	sweetness = 0
+	flavor = 0
+	herbaceousness = 0
+	tea_mix = []
+	currentAdditivesAmount = 0
+	currentTeaBasesAmount = 0
+
+	

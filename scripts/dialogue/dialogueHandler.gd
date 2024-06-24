@@ -20,12 +20,17 @@ var expectedDialogueOptionsPositions = [
 	[],
 	[Vector2(-450, -80)],
 	[Vector2(-450, -130), Vector2(-450, -30)],
-	[Vector2(-450,-140), Vector2(-450, -80), Vector2(-450, 20)],
+	[Vector2(-450,-140), Vector2(-450, -80), Vector2(-450, -20)],
 	[Vector2(-450,-180), Vector2(-450, -120), Vector2(-450, -60), Vector2(-450, 0)]
 ]
 
 var dialogueSpeakerSpriteCatalogPaths = {
-	"willowDialogue1": "res://textures/sprites/willow"
+	"willowDialogue1": "res://textures/sprites/willow",	
+	"paisleyDialogue1": "res://textures/sprites/paisley",
+	"willowDialogue2": "res://textures/sprites/willow",	
+	"paisleyDialogue2": "res://textures/sprites/paisley",
+	"willowDialogue3": "res://textures/sprites/willow",	
+	"paisleyDialogue3": "res://textures/sprites/paisley"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -34,7 +39,7 @@ func _ready():
 		option.visible = false
 		
 # When starting dialogue, pick out correct dialogue tree and start at correct line
-func openDialogueBox(dialogueTreeName):
+func openDialogueBox(dialogueTreeName: String, sectionName: String):
 	if(self.visible):
 		#cannot open new dialogue box if dialogue box already open
 		return
@@ -45,7 +50,7 @@ func openDialogueBox(dialogueTreeName):
 	currentLineNumber = -1
 	speakerSprite.texture = ResourceLoader.load(dialogueSpeakerSpriteCatalogPaths[dialogueTreeName]+"/default.png")
 	self.visible = true
-	advanceSections()
+	goToSection(sectionName)
 	speakerNameLabel.text = ""
 	mainTextLabel.text = ""
 	unfurlText()

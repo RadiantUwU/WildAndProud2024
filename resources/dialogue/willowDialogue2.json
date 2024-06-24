@@ -1,0 +1,290 @@
+[
+	{
+		"section": "Willow1Start",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Hey there again chief! How’s it going?",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "It’s going great for me!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Now that I don’t have anyone telling me what I can and can’t do, I really feel like I can spread my wings. It’s a wonderful feeling!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I’m in a good mood today. Could you please prepare something mild and floral? Thanks in advance!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Willow2Start", "setCurrentTea,Willow2"]
+	},
+	
+	{
+		"section": "Willow2TeaFailure",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "No, chief, that won’t do!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "It’s kind of strong-tasting, and I can’t get the floral notes in there.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Nothing bad with bland teas, of course! It’s just that I don’t want to get one for myself right now.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Please make it again. Remember -  mild, and floral. Thanks!",
+				"emotion": "default",
+				"options": []
+			}		
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Willow1TeaFailure"]
+	},
+	
+	{
+		"section": "Willow2TeaFlawless",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Thank you chief! Once again, you knocked it out of the park!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Willow2Inquire"],
+	},
+	
+	{
+		"section": "Willow2TeaSuccess",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Now that is much better! Thanks! I hope I wasn’t too much of a trouble for you, hehe~",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Willow2Inquire"],
+	},
+	{
+		"section": "Willow2Inquire",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "I hope you don’t mind my rambling.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Truth be told, it feels a tiny bit daunting. How much freedom I have right now.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But I think it’s for the better. I need to know how to function on my own!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "And speaking of it - guess what? I’m going to a party tomorrow!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I’ve gotten an invitation from my friends at school, and I am so stoked to go there!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "First party… which I will attend… on my own…",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Now that I mention it - do you think I can go wearing what I wear right now? I just love this asymmetric crop top, I think it goes well with the rest of my fit.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Plus it feels breezy, too! Perfect for a summer heat!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "What do you think?",
+				"emotion": "default",
+				"options": [
+					{
+						"line": "That outfit matches you perfectly.",
+						"onSelection": ["goToSection,PerfectMatch"]
+					},
+					{
+						"line": "It looks kind of provocative.",
+						"onSelection": ["goToSection,Provocative"]
+					},
+					{
+						"line": "Just wear what you love and let your personality shine.",
+						"onSelection": ["goToSection,Personality"]
+					},
+				]
+			},
+		],
+		"onCompletion": []
+	},
+	
+	{
+		"section": "PerfectMatch",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Oh stop it, you charmer you. You’re gonna make me blush!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Willow2PostInquiry"],
+	},
+	{
+		"section": "Provocative",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Do you really think so? That wasn’t my intention at all, but I’m going to keep that in mind.",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Willow2PostInquiry"],
+	},
+	
+	{
+		"section": "Personality",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "That’s easy for you to say, I bet you are the heart of every party out there!",
+				"emotion": "happy",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Willow2PostInquiry"],
+	},
+	{
+		"section": "Willow2PostInquiry",
+		"lines": [
+			{
+				"name": "Willow",
+				"line": "Still, thanks for your input. I knew I could count on you!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I had to ask you, because for some reason, I keep getting stared at, and I don’t know if that was because of my outfit, or because of… because of who I am.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But really, I think I kind of got used to the staring! If you only knew how bad it was before I came out.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "It felt like their eyes were really boring into me. Like they were about to figure out that I was only pretending to be a boy.",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But someone taught me to not care about what they think. That I should live my life true to myself, and to not bother with opinions of naysayers!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "It’s kinda sad that this was the reason why we broke up… but maybe it was me who took it too far.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I mean, she had the best intentions at heart. I just know it.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But she’s not someone who would just come around like that. She’s got too strong of a spirit to change on behalf of just a single gal!",
+				"emotion": "sad",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "…",
+				"emotion": "sad",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Ugghhh, I’m sorry for bringing it up again.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Anyway, the party is going to be happening at Mincy’s house, Parkway Avenue 97. I would be stoked if you could join!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But you’re… probably going to be attending the shop…",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Sorry for mentioning it. I’m such a silly goof. Hehe~",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "Anyway, thanks for the tea! Have a good day!",
+				"emotion": "happy",
+				"options": []
+			}
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Willow2", "startCountdown,Paisley2"],
+	},
+]

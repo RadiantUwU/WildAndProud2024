@@ -1,0 +1,320 @@
+[
+	{
+		"section": "Paisley2Start",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "G’morning!",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I’m growing to like this establishment of yours, I think I will be popping in more often!",
+				"emotion": "confident",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Please get me something sweet and floral this time. I’m feeling fancy today.",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley3Start", "setCurrentTea,Paisley3"]
+	},
+	
+	{
+		"section": "Paisley3TeaFailure",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Nah, chief, this isn’t gonna cut it. Make this tea properly, would you?",
+				"emotion": "annoyed",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "If you need a reminder - I want something sweet and floral. Thanks!",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley3TeaFailure"]
+	},
+	
+	{
+		"section": "Paisley3TeaFlawless",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Oh yeah, that’s exactly what I had in mind! It tastes so lovely.",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley3Inquire"],
+	},
+	
+	{
+		"section": "Paisley3TeaSuccess",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Now this is what rustles my jimmies! I knew you could do it.",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley3Inquire"],
+	},
+	{
+		"section": "Paisley3Inquire",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "I need to tell you something. I might have not been exactly upfront with you.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I’ve come here because I thought I was going to see Willow. I know she likes this place, she mentioned it to me a while ago.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Has she been here today?",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "... No?",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "That’s… kinda worrying. I thought I could check up on her, see how she is doing.",
+				"emotion": "sad",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Do you know by any chance where she might be?",
+				"emotion": "default",
+				"options": [
+					{
+						"line": "Yeah, actually. She’s at a party.",
+						"onSelection": ["goToSection,Paisley3Knows"]
+					},
+				]
+			},
+		],
+		"onCompletion": []
+	},
+	{
+		"section": "Paisley3Knows",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "She’s at a WHAT?",
+				"emotion": "annoyed",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "No way. I don’t believe you. That’s not like her.",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Do you have any idea how bad of an idea this is?",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "She’s, like, deathly afraid of large groups of people! It’s not gonna be a fun experience for her at all!",
+				"emotion": "annoyed",
+				"options": [
+					{
+						"line": "Oh, I kind of get that.",
+						"onSelection": ["goToSection,Paisley3Commiserate"]
+					},
+					{
+						"line": "YBut she seemed excited about it…",
+						"onSelection": ["goToSection,Paisley3Objection"]
+					},
+				]
+			},
+		],
+		"onCompletion": []
+	},
+	{
+		"section": "Paisley3Commiserate",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Yeah, exactly! You get what I mean!",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley3Pondering"]
+	},
+	{
+		"section": "Paisley3Objection",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "No way. Her, being excited at the prospect of long hours of enduring this party? That can’t be right!",
+				"emotion": "thinking",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley3Pondering"]
+	},
+	{
+		"section": "Paisley3Pondering",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "I must be missing something. Why would she willingly go out there and experience something she knows well she won’t enjoy?",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "... Could it be…",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "… That she wants to face that fear?",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Oh, that actually makes a lot of sense.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Dang, it hasn’t even been a full week and she’s already growing as a person.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "That’s actually quite admirable, don’t you think?",
+				"emotion": "confident",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "But still, I’m worried that this is a bad time to do that, and a bad way to go about it.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Did she tell you where the party is happening? I want to make sure she’s doing okay.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I won’t be dragging her out as soon as I get there! I promise!",
+				"emotion": "confident",
+				"options": [
+					{
+						"line": "I don’t really know if I can tell you.",
+						"onSelection": ["goToSection,Paisley3Withhold"]
+					},
+					{
+						"line": "I don’t remember, sorry.",
+						"onSelection": ["goToSection,Paisley3Avoid"]
+					},
+					{
+						"line": "Yeah, it’s in the Parkway Avenue 97.",
+						"onSelection": ["goToSection,Paisley3Disclose"]
+					},
+				]
+			},
+		],
+		"onCompletion": []
+	},
+	{
+		"section": "Paisley3Withhold",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "That’s… understandable. I would have been intruding into her life too much, especially when she was clear she doesn’t want me there anymore.",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "But I still feel like this is the right thing to do. I will find her, and be for her, regardless.",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley3Finish"]
+	},
+	{
+		"section": "Paisley3Avoid",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Oh. That’s a bummer.",
+				"emotion": "sad",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "But it doesn't matter, really. I want to be there for her, and I will find her. Feels like the right thing to do.",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley3Finish"]
+	},
+	{
+		"section": "Paisley3Disclose",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "It’s at Mincy’s place? That’s great to hear, actually. I know her, and a couple of her friends.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I’m gonna go and ask them to go nicely on Willow. Thanks a bunch for letting me know.",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley3Finish"]
+	},
+	{
+		"section": "Paisley3Finish",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "So, I will be heading off now. Have a good day!",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley3", "startCountdown,Willow3"]
+	}
+]

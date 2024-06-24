@@ -1,0 +1,187 @@
+[
+	{
+		"section": "Paisley1Start",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Good morning. Do you run this establishment?",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I don’t see other people around here, there’s just you. So you must be running this place on your own.",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "That is actually kind of impressive. My name’s Paisley, by the way.",
+				"emotion": "confident",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Anyway, about my order… I want something mild and slightly herbaceous.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I need my focus to be on point. I’m preparing for my exams that come two months from now, and I want to be ready.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Make me something like that.",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley1Start", "setCurrentTea,Paisley1"]
+	},
+	
+	{
+		"section": "Paisley1TeaFailure",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "No, that’s not what I asked.",
+				"emotion": "annoyed",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "You need to focus, chief. Focus!",
+				"emotion": "confident",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I asked for something mild and just a little herbaceous. And also, once you’re done serving me, you can also make one just like that for yourself as well.",
+				"emotion": "default",
+				"options": []
+			},	
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley1TeaFailure"]
+	},
+	
+	{
+		"section": "Paisley1TeaFlawless",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Huh. That’s actually pretty good. Better than I expected. You keep surprising me, chief.",
+				"emotion": "thinking",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley1Inquire"],
+	},
+	
+	{
+		"section": "Paisley1TeaSuccess",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Okay, now that is more like it. Much appreciated.",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley1Inquire"],
+	},
+	{
+		"section": "Paisley1Inquire",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "That one takes me back to high school. Back at my parent’s house, I used to drink tea just like that when I was pulling my all-nighters.",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "It helps me take my mind off of things, and to concentrate my attention on the things that really need it.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I’m sorry if I acted a little bit stiff. There’s this one thing that’s on my mind and it keeps bothering me.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I have to ask you. What do you think 'being supportive' means?",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Sorry if that’s out of the left field. I just want to know what you think about it.",
+				"emotion": "thinking",
+				"options": [
+					{
+						"line": "To help out whenever possible.",
+						"onSelection": ["goToSection,Paisley1PostInquire"]
+					},
+					{
+						"line": "To be patient and understanding.",
+						"onSelection": ["goToSection,Paisley1PostInquire"]
+					},
+					{
+						"line": "To be encouraging and non-judgmental.",
+						"onSelection": ["goToSection,Paisley1PostInquire"]
+					}
+				]
+			},
+		],
+		"onCompletion": []
+	},
+	
+	{
+		"section": "Paisley1PostInquire",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Thanks for your input.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Maybe I did understand it the wrong way…",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Oh, right. I asked you because recently I screwed up big time.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "At least, I think I did. But I don’t know what I was supposed to do back then.",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I just don’t understand…",
+				"emotion": "annoyed",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "But I won’t get anywhere by wallowing in misery. I’m going to think about it some more. Goodbye for now!",
+				"emotion": "default",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley1", "startCountdown,Willow2", "endDay"]
+	}
+]

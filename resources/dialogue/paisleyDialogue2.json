@@ -1,0 +1,219 @@
+[
+	{
+		"section": "Paisley2Start",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Heeelllloooooo…",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Don’t mind my looks today, I am kinda out of it.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "My study sessions have been going swimmingly, But I’m learning that I can’t pull all-nighters like I used to.",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "And so, I am in a dire need for something that will put me back on my feet.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Give me the most bitter and the most intense brew you have. Don’t pull any punches.",
+				"emotion": "default",
+				"options": []
+			}
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley2Start", "setCurrentTea,Paisley2"]
+	},
+	
+	{
+		"section": "Paisley2TeaFailure",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "This is it?",
+				"emotion": "annoyed",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I know for a fact that this isn’t it. You can do better than that!",
+				"emotion": "confident",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I asked for the most bitter and most intense tea that you can make. And I ain’t gonna move an inch until I get one.",
+				"emotion": "default",
+				"options": []
+			},	
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley2TeaFailure"]
+	},
+	
+	{
+		"section": "Paisley2TeaFlawless",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Uggghhh, that one packs a punch! Just what I needed! Much appreciated!",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley2Inquire"],
+	},
+	
+	{
+		"section": "Paisley2TeaSuccess",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "Oh wow, okay, okay. Now we’re talking. I like this one much better.",
+				"emotion": "confident",
+				"options": []
+			},
+		],
+		"onCompletion": ["goToSection,Paisley2Inquire"],
+	},
+	{
+		"section": "Paisley2Inquire",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "It’s kind of impressive how much variety you can get between different teas. I mean, this is just a leaf extract, no?",
+				"emotion": "thinking",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Yet people out there do different things to those leaves and somehow at the end you get so many different end products.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "...",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Say, can I confide in you?",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I know I should be letting go of my ex. I want only the best for her. But still, I can’t help but be worried about her, you know?",
+				"emotion": "annoyed",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I’ve been thinking about it since yesterday… and I’m starting to think I know why she was so angry at me.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "It must be because I’m so quick to plan things ahead.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "And when she wanted to do something, I could come up with ten ways how things could go wrong.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "So we would always end up doing the least disaster-prone things together.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "She must have taken this as “it’s my way or the highway” kind of thing.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "But it’s obviously not! It’s just that I take everything into consideration.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "...",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "This is how they say, I guess. 'Road to hell is paved with good intentions.'",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Our history goes back so far. I taught her how to do makeup. We picked out an entire wardrobe for her, so that she feels her most authentic self.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Oh and I have this tattoo on my left forearm. It’s a swan. She picked it out for me.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "I hope Willow is doing well…",
+				"emotion": "default",
+				"options": [
+					{
+						"line": "Oh, about her…",
+						"onSelection": ["goToSection,Paisley2PostWillowDrop"]
+					},
+					{
+						"line": "...",
+						"onSelection": ["goToSection,Paisley2PostWillowDrop"]
+					},
+				]
+			},
+		],
+		"onCompletion": []
+	},
+	
+	{
+		"section": "Paisley2PostWillowDrop",
+		"lines": [
+			{
+				"name": "Paisley",
+				"line": "~Oh, I must have been rambling. Sorry.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Paisley",
+				"line": "Thanks for listening. You’re great for that. See you!",
+				"emotion": "thinking",
+				"options": []
+			},
+		],
+		"onCompletion": ["quit", "saveSectionCompleted,Paisley2", "startCountdown,Paisley3", "endDay"]
+	}
+]
