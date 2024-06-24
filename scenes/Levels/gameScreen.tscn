@@ -212,7 +212,7 @@ lifetime = 1.14
 fixed_fps = 60
 
 [node name="VoxelGi" type="Sprite2D" parent="TeaMachine"]
-modulate = Color(0, 0, 0, 0.333333)
+modulate = Color(0, 0, 0, 0.592157)
 texture_filter = 1
 position = Vector2(-155.898, 161.384)
 rotation = 0.521853

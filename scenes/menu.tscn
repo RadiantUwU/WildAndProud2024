@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://1yk3u8ykcpl4"]
+[gd_scene load_steps=13 format=3 uid="uid://1yk3u8ykcpl4"]
 
 [ext_resource type="Script" path="res://scripts/menu/mainMenu.gd" id="1_n14sm"]
 [ext_resource type="Script" path="res://scripts/menu/welcomeMenu.gd" id="2_qgg5s"]
 [ext_resource type="Script" path="res://scripts/menu/settingsMenu.gd" id="3_8alsp"]
 [ext_resource type="PackedScene" uid="uid://bsps5nd8dwjmk" path="res://scenes/settings_menu_panel.tscn" id="3_mp7py"]
+[ext_resource type="Texture2D" uid="uid://casl547155e2b" path="res://textures/iconic.png" id="5_qeqkh"]
 [ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="5_y64qe"]
+[ext_resource type="Texture2D" uid="uid://8o4ch848oin2" path="res://textures/show-your-colors.png" id="6_5b5hf"]
+[ext_resource type="Texture2D" uid="uid://b2wkxtpa1w4os" path="res://textures/whats-the-t.png" id="7_ifo75"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3gl4i"]
 font_size = 82
@@ -43,7 +46,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_right = 1152.0
-offset_bottom = 250.0
+offset_bottom = 175.0
 grow_horizontal = 2
 text = "That's the Tea"
 label_settings = SubResource("LabelSettings_3gl4i")
@@ -125,7 +128,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_right = 1152.0
-offset_bottom = 250.0
+offset_bottom = 175.0
 grow_horizontal = 2
 text = "Select Save File"
 label_settings = SubResource("LabelSettings_3gl4i")
@@ -141,7 +144,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_right = 1152.0
-offset_bottom = 250.0
+offset_bottom = 175.0
 grow_horizontal = 2
 text = "Settings"
 label_settings = SubResource("LabelSettings_3gl4i")
@@ -162,7 +165,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_right = 1152.0
-offset_bottom = 250.0
+offset_bottom = 175.0
 grow_horizontal = 2
 text = "Credits"
 label_settings = SubResource("LabelSettings_3gl4i")
@@ -175,13 +178,26 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = 300.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_top = 150.0
+offset_right = 1154.0
+offset_bottom = 700.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="CreditsScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Created for Godot Engine + Godot Wild Jam WILD AND PROUD Mini Jam"
+label_settings = SubResource("LabelSettings_gp6xs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreditsScreen/VBoxContainer"]
+custom_minimum_size = Vector2(1152, 300)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CreditsScreen/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 text = "Graphics: Lyralici0us
 Shaders: ItsMeRadiant
@@ -191,9 +207,24 @@ label_settings = SubResource("LabelSettings_gp6xs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spacer" type="Control" parent="CreditsScreen/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+[node name="Control2" type="Control" parent="CreditsScreen/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CreditsScreen/VBoxContainer/HBoxContainer/Control2"]
+position = Vector2(50, 150)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_qeqkh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CreditsScreen/VBoxContainer/HBoxContainer/Control2"]
+position = Vector2(250, 150)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_5b5hf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CreditsScreen/VBoxContainer/HBoxContainer/Control2"]
+position = Vector2(450, 150)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("7_ifo75")
 
 [node name="Return" type="TextureButton" parent="CreditsScreen/VBoxContainer"]
 custom_minimum_size = Vector2(300, 75)
