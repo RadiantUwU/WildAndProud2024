@@ -4,26 +4,44 @@
 		"lines": [
 			{
 				"name": "Willow",
-				"line": "Hey there again chief! How’s it going?",
+				"line": "Heeeey chief...",
 				"emotion": "happy",
 				"options": []
 			},
 			{
 				"name": "Willow",
-				"line": "It’s going great for me!",
+				"line": "So… do you know Paisley?",
 				"emotion": "default",
 				"options": []
 			},
 			{
 				"name": "Willow",
-				"line": "Now that I don’t have anyone telling me what I can and can’t do, I really feel like I can spread my wings. It’s a wonderful feeling!",
-				"emotion": "default",
-				"options": []
-			},
-			{
-				"name": "Willow",
-				"line": "I’m in a good mood today. Could you please prepare something mild and floral? Thanks in advance!",
+				"line": "This absolute worrywart has been keeping tabs on me this whole time!",
 				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "I… am not exactly sure how to feel about this…",
+				"emotion": "embarassed",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": "But at least I’m glad it all turned out for the better!",
+				"emotion": "happy",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": " The party was about to be a total disaster, until she came along and turned things around.",
+				"emotion": "default",
+				"options": []
+			},
+			{
+				"name": "Willow",
+				"line": " I’m gonna tell you all about it, but first - I’m parched. Could you make me something herbaceous and mild?",
+				"emotion": "default",
 				"options": []
 			},
 		],
@@ -58,7 +76,7 @@
 				"options": []
 			}		
 		],
-		"onCompletion": ["quit", "saveSectionCompleted,Willow2TeaFailure"]
+		"onCompletion": ["quit", "saveSectionCompleted,Willow1TeaFailure"]
 	},
 	
 	{
