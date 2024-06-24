@@ -196,6 +196,9 @@ func handleDialogueEvents(dialogueEvents: Array[String]):
 				gameplayNode.gameOver()
 			"startCountdown":
 				gameplayNode.startCountdown(split[1])
+			"saveSectionCompleted":
+				if !GameStateHolder.completedSections.has(split[1]):
+					GameStateHolder.completedSections.append(split[1])
 			_:
 				pass
 		

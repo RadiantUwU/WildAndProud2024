@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/menu/settingsMenuPanel.gd" id="1_1otni"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_w5i50"]
+[sub_resource type="LabelSettings" id="LabelSettings_iw02r"]
 font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="SettingsMenuPanel" type="VBoxContainer"]
 anchors_preset = 7
@@ -122,7 +124,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Return"
-label_settings = SubResource("LabelSettings_w5i50")
+label_settings = SubResource("LabelSettings_iw02r")
 horizontal_alignment = 1
 vertical_alignment = 1
 

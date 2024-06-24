@@ -26,8 +26,12 @@ func switchByName(menuName: String):
 		"welcome":
 			switch(welcomeMenu)
 		"play":
-			switch(playMenu)
+			get_tree().change_scene_to_file("res://scenes/Levels/gameScreen.tscn")
 		"settings":
 			switch(settingsMenu)
 		"credits":
 			switch(creditsMenu)
+
+
+func _on_return_pressed():
+	switch(welcomeMenu)

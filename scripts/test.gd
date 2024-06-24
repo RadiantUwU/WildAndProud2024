@@ -112,11 +112,13 @@ func _on_next_event_timer_timeout():
 			DialogueBox.openDialogueBox("paisleyDialogue2", "Paisley2Start")
 		"Paisley3":
 			DialogueBox.openDialogueBox("paisleyDialogue3", "Paisley3Start")
-	
+		"gameOver":
+			gameOver()
 
 func gameOver():
-	pass
-	
+	DialogueBox.hideDialogueBox()
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
 func presentTea(tea: Tea):
 	teaMakingPanel.deactivate()
 	gameStageLabel.visible = false
@@ -234,3 +236,7 @@ func advanceTeaStage():
 func restartTeaStage():
 	teaStage = 0
 	teacup.texture = teaStageTexture[teaStage]
+
+func _on_restart_pressed():
+	DialogueBox.hideDialogueBox()
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

@@ -1,15 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://1yk3u8ykcpl4"]
+[gd_scene load_steps=10 format=3 uid="uid://1yk3u8ykcpl4"]
 
 [ext_resource type="Script" path="res://scripts/menu/mainMenu.gd" id="1_n14sm"]
 [ext_resource type="Script" path="res://scripts/menu/welcomeMenu.gd" id="2_qgg5s"]
 [ext_resource type="Script" path="res://scripts/menu/settingsMenu.gd" id="3_8alsp"]
 [ext_resource type="PackedScene" uid="uid://bsps5nd8dwjmk" path="res://scenes/settings_menu_panel.tscn" id="3_mp7py"]
+[ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="5_y64qe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3gl4i"]
 font_size = 82
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_w5i50"]
 font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gp6xs"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iw02r"]
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -21,7 +36,6 @@ grow_vertical = 2
 script = ExtResource("1_n14sm")
 
 [node name="WelcomeScreen" type="CanvasGroup" parent="."]
-visible = false
 script = ExtResource("2_qgg5s")
 
 [node name="Title" type="Label" parent="WelcomeScreen"]
@@ -31,7 +45,7 @@ anchor_right = 0.5
 offset_right = 1152.0
 offset_bottom = 250.0
 grow_horizontal = 2
-text = "Leafy Leisure"
+text = "That's the Tea"
 label_settings = SubResource("LabelSettings_3gl4i")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -61,6 +75,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Settings" type="TextureButton" parent="WelcomeScreen/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(300, 75)
 layout_mode = 2
 
@@ -154,41 +169,55 @@ label_settings = SubResource("LabelSettings_3gl4i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CreditsScreen"]
-offset_top = 247.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsScreen"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 300.0
 offset_right = 1152.0
-offset_bottom = 641.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="Label" type="Label" parent="CreditsScreen/ScrollContainer"]
+[node name="Label" type="Label" parent="CreditsScreen/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-Credit Text here
-"
+text = "Graphics: Lyralici0us
+Shaders: ItsMeRadiant
+Coding: Rethagos & ItsMeRadiant
+Writing: Rethagos"
+label_settings = SubResource("LabelSettings_gp6xs")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="CreditsScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Return" type="TextureButton" parent="CreditsScreen/VBoxContainer"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CreditsScreen/VBoxContainer/Return"]
+custom_minimum_size = Vector2(1152, 75)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Return"
+label_settings = SubResource("LabelSettings_iw02r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
+modulate = Color(0.695503, 0.695503, 0.695503, 1)
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(3.18889, 2.67917)
+texture = ExtResource("5_y64qe")
 
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/PlayGame" to="WelcomeScreen" method="_on_play_game_pressed"]
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/Settings" to="WelcomeScreen" method="_on_settings_pressed"]
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/Credits" to="WelcomeScreen" method="_on_credits_pressed"]
 [connection signal="pressed" from="WelcomeScreen/VBoxContainer/Quit" to="WelcomeScreen" method="_on_quit_pressed"]
+[connection signal="pressed" from="CreditsScreen/VBoxContainer/Return" to="." method="_on_return_pressed"]

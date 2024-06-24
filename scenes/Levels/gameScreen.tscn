@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://5py8gc3ytdgn"]
+[gd_scene load_steps=22 format=3 uid="uid://5py8gc3ytdgn"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_kpo86"]
 [ext_resource type="Texture2D" uid="uid://bsl0ei16up5p1" path="res://textures/240_F_277308808_Zg0tLEPhfeu0oamHuUEWEnH0r3i1NmCm.jpg" id="2_mfr41"]
@@ -14,7 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://cpcmi0xoc0q08" path="res://textures/Teagame teabag.zip.png" id="7_heehe"]
 [ext_resource type="Texture2D" uid="uid://bm0dj2fsjn831" path="res://textures/sprites/paisley/default.png" id="7_pltyb"]
 [ext_resource type="Texture2D" uid="uid://brsyaibhi8f4e" path="res://textures/Teagame Paisley Default.png" id="8_77ps3"]
+[ext_resource type="Texture2D" uid="uid://duofr7exc0k4r" path="res://textures/Dialogue box adjusted.png" id="8_glrlq"]
 [ext_resource type="PackedScene" uid="uid://d28pmsx4nfriv" path="res://scenes/tea_making_panel.tscn" id="10_61bd3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtd48"]
+font_size = 20
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1xyo"]
 
@@ -43,6 +47,29 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_kpo86")
 teaStageTexture = Array[Texture2D]([ExtResource("6_s3qth"), ExtResource("3_unc3v"), ExtResource("4_wpqx6"), ExtResource("5_f8i8v")])
 waitingCustomerTextures = Array[Texture2D]([ExtResource("6_3fppq"), ExtResource("7_pltyb")])
+
+[node name="Restart" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1010.0
+offset_top = 20.0
+offset_right = 1130.0
+offset_bottom = 70.0
+grow_horizontal = 0
+texture_normal = ExtResource("8_glrlq")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Restart"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_vtd48")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="240F277308808Zg0tLePhfeu0OamHuUewEnH0r3i1NmCm" type="Sprite2D" parent="."]
 z_index = -1
@@ -363,6 +390,7 @@ autowrap_mode = 2
 
 [node name="TeaMakingPanel" parent="." instance=ExtResource("10_61bd3")]
 
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="TeaMachine/TeaMachineButton/CinnamonButton" to="." method="_on_cinnamon_button_pressed"]
 [connection signal="pressed" from="TeaMachine/TeaMachineButton2/MilkButton" to="." method="_on_milk_button_pressed"]
 [connection signal="pressed" from="TeaMachine/TeaMachineButton3/JasmineButton" to="." method="_on_jasmine_button_pressed"]
