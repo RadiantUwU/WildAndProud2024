@@ -11,3 +11,7 @@
 .mono/
 data_*/
 mono_crash.*.json
+
+# Custom
+
+/exports
